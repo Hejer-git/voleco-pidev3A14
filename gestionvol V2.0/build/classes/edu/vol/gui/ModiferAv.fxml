@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="416.0" prefWidth="708.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.vol.gui.ModiferAvionController">
+   <children>
+      <Label layoutX="132.0" layoutY="147.0" prefHeight="21.0" prefWidth="64.0" text="NbPlace" />
+      <Label layoutX="123.0" layoutY="211.0" prefHeight="21.0" prefWidth="76.0" text="NomAvion" />
+      <Label layoutX="145.0" layoutY="281.0" text="date" />
+      <Button fx:id="bAnnuler" layoutX="299.0" layoutY="347.0" mnemonicParsing="false" onAction="#annuler" text="annuler" />
+      <Button fx:id="bValider" layoutX="164.0" layoutY="347.0" mnemonicParsing="false" onAction="#btnValiderModifAv" text="valider" />
+      <TextField fx:id="tfNbplaceModif" layoutX="225.0" layoutY="142.0" />
+      <TextField fx:id="tfNomAvionModif" layoutX="225.0" layoutY="192.0" prefHeight="58.0" prefWidth="187.0" />
+      <DatePicker fx:id="tfdateModif" layoutX="225.0" layoutY="276.0" prefHeight="31.0" prefWidth="187.0" />
+      <Label layoutX="266.0" layoutY="54.0" text="Modifier Avion">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfclasseModif" layoutX="493.0" layoutY="142.0" />
+      <TextField fx:id="tfModeleModif" layoutX="493.0" layoutY="206.0" />
+      <Label layoutX="438.0" layoutY="147.0" text="classe" />
+      <Label layoutX="428.0" layoutY="211.0" prefHeight="21.0" prefWidth="58.0" text="Modele" />
+      <Label layoutX="423.0" layoutY="281.0" prefHeight="21.0" prefWidth="64.0" text="IdAvion" />
+      <TextField fx:id="tfIdModif" layoutX="493.0" layoutY="276.0" />
+   </children>
+</AnchorPane>
