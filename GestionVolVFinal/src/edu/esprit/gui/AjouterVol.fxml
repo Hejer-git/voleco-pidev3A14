@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="919.0" styleClass="home-back" stylesheets="@gestionavion.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.AjouterVolController">
+    <children>
+      <AnchorPane layoutX="-1.0" layoutY="74.0" prefHeight="506.0" prefWidth="240.0" styleClass="sidebar">
+         <children>
+            <Pane layoutX="30.0" layoutY="37.0" prefHeight="30.0" prefWidth="180.0" styleClass="labbtn">
+               <children>
+                  <Label alignment="CENTER" layoutX="41.0" layoutY="6.0" text="Se deconnecter" textFill="#2262c6">
+                     <font>
+                        <Font name="Berlin Sans FB" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <HBox alignment="CENTER_LEFT" layoutX="1.0" layoutY="122.0" prefHeight="42.0" prefWidth="240.0" styleClass="sidebar-btn-text">
+               <children>
+                  <ImageView fitHeight="33.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/user.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="29.0" prefWidth="146.0" text="Gestion Utilisateur" textFill="#a2bee8">
+                     <font>
+                        <Font name="Cambria" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </HBox>
+            <Label alignment="CENTER" layoutX="30.0" layoutY="404.0" text="Strorage Details" textFill="#a2bee8">
+               <font>
+                  <Font name="Berlin Sans FB" size="16.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" layoutY="164.0" prefHeight="42.0" prefWidth="240.0" styleClass="sidebar-btn-text">
+               <children>
+                  <ImageView fitHeight="33.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/vol.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="29.0" prefWidth="146.0" text="Gestion Vols" textFill="#a2bee8">
+                     <font>
+                        <Font name="Cambria" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutY="206.0" prefHeight="42.0" prefWidth="240.0" styleClass="sidebar-btn-text">
+               <children>
+                  <ImageView fitHeight="33.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/bagage.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="29.0" prefWidth="146.0" text="Gestion Bagage" textFill="#a2bee8">
+                     <font>
+                        <Font name="Cambria" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutY="253.0" prefHeight="42.0" prefWidth="240.0" styleClass="sidebar-btn-text">
+               <children>
+                  <ImageView fitHeight="33.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/reservation.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="29.0" prefWidth="146.0" text="Gestion Reservation" textFill="#a2bee8">
+                     <font>
+                        <Font name="Cambria" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutY="295.0" prefHeight="42.0" prefWidth="240.0" styleClass="sidebar-btn-text">
+               <children>
+                  <ImageView fitHeight="33.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/reclamation.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="29.0" prefWidth="146.0" text="Gestion Reclamation" textFill="#a2bee8">
+                     <font>
+                        <Font name="Cambria" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutY="337.0" prefHeight="42.0" prefWidth="240.0" styleClass="sidebar-btn-text">
+               <children>
+                  <ImageView fitHeight="33.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/offres.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="29.0" prefWidth="146.0" text="Gestion Offres" textFill="#a2bee8">
+                     <font>
+                        <Font name="Cambria" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="160.0" fitWidth="159.0" layoutX="-10.0" layoutY="-30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logo.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="112.0" layoutY="22.0" text="VOLECO" textFill="#2262c6">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="690.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons8_bell_24px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="714.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons8_help_32px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="741.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons8_settings_26px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="873.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons8_slider_50px.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="253.0" layoutY="157.0" prefHeight="21.0" prefWidth="65.0" text="NumVol" />
+      <Label layoutX="253.0" layoutY="239.0" prefHeight="21.0" prefWidth="77.0" text="HeureDep" />
+      <Label layoutX="249.0" layoutY="343.0" prefHeight="21.0" prefWidth="65.0" text="DateDep" />
+      <Label layoutX="585.0" layoutY="239.0" prefHeight="21.0" prefWidth="65.0" text="HeureArr" />
+      <Label layoutX="585.0" layoutY="157.0" prefHeight="21.0" prefWidth="65.0" text="DureeVol" />
+      <TextField fx:id="tfNumVol" layoutX="356.0" layoutY="152.0" />
+      <TextField fx:id="tfDureeVol" layoutX="678.0" layoutY="152.0" />
+      <TextField fx:id="tfHeureDep" layoutX="356.0" layoutY="234.0" />
+      <TextField fx:id="tfHeureArr" layoutX="678.0" layoutY="234.0" />
+      <DatePicker fx:id="tfDateDep" layoutX="340.0" layoutY="338.0" />
+      <Button fx:id="ValiderVol" layoutX="304.0" layoutY="451.0" mnemonicParsing="false" onAction="#btnAjouterVol" prefHeight="31.0" prefWidth="89.0" text="Valider" />
+      <Button layoutX="460.0" layoutY="451.0" mnemonicParsing="false" onAction="#btnretour" prefHeight="31.0" prefWidth="89.0" text="Retour" />
+      <DatePicker fx:id="tfdateArr" layoutX="678.0" layoutY="338.0" />
+      <Label layoutX="593.0" layoutY="343.0" prefHeight="21.0" prefWidth="57.0" text="DateArr" />
+      <ComboBox fx:id="comborole" layoutX="678.0" layoutY="410.0" prefHeight="31.0" prefWidth="218.0" />
+      <Label layoutX="593.0" layoutY="415.0" prefHeight="21.0" prefWidth="65.0" text="idAvion" />
+   </children>
+    
+</AnchorPane>
