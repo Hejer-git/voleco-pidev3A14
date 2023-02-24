@@ -17,6 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 
 /**
  *
@@ -34,19 +36,26 @@ public class ServiceReservation implements IReservation<Reservation> {
     @Override
     public void insert(Reservation r) {
         try {
-            String query = "INSERT INTO reservation ( nomres, depart, destination, dateres, bagage) VALUES (?, ?, ?, ?, ?)";
+            String query = "INSERT INTO reservation ( nomres, depart, destination, dateres, bagage, idsiege) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = conn.prepareStatement(query);
             statement.setString(1, r.getNom());
             statement.setString(2, r.getDepart());
             statement.setString(3, r.getDestination());
             statement.setDate(4, (Date) r.getDate());
             statement.setInt(5, r.getBagage());
+            statement.setInt(6, r.getIdSiege());
             
             statement.executeUpdate();
+            
+            
              System.out.println("Reservation created !");
+             
+             
+        
         } catch (SQLException ex) {
             System.out.println("Error while inserting the event: " + ex.getMessage());
-        }   
+        }  
+        
         
         
     }
@@ -69,14 +78,15 @@ public class ServiceReservation implements IReservation<Reservation> {
     @Override
     public void update(Reservation r) {
         try {
-            String query = "UPDATE reservation SET nomres = ?, depart = ?, destination = ?, dateres = ?, bagage = ? WHERE idRes = ?";
+            String query = "UPDATE reservation SET nomres = ?, depart = ?, destination = ?, dateres = ?, bagage = ?, idsiege = ? WHERE idRes = ?";
             PreparedStatement statement = conn.prepareStatement(query);
             statement.setString(1, r.getNom());
             statement.setString(2, r.getDepart());
             statement.setString(3, r.getDestination());
             statement.setDate(4, (Date) r.getDate());
             statement.setInt(5, r.getBagage());
-            statement.setInt(6, r.getId());
+            statement.setInt(6, r.getIdSiege());
+            statement.setInt(7, r.getId());
             statement.executeUpdate();
         } catch (SQLException ex) {
             System.out.println("Error: " + ex.getMessage());
@@ -96,7 +106,9 @@ public class ServiceReservation implements IReservation<Reservation> {
                 String destination = rs.getString("destination");
                 Date date = rs.getDate("dateres");
                 int bagage = rs.getInt("bagage");
-                Reservation r = new Reservation(id,nom,depart,destination,date,bagage);
+                int idsiege = rs.getInt("idsiege");
+
+                Reservation r = new Reservation(id,nom,depart,destination,date,bagage,idsiege);
                 Reservations.add(r);
             }
         } catch (SQLException e) {
@@ -120,14 +132,19 @@ public class ServiceReservation implements IReservation<Reservation> {
                 String destination = rs.getString("destination");
                 Date date = rs.getDate("dateres");
                 int bagage = rs.getInt("bagage");
+                int idsiege = rs.getInt("idsiege");
 
-                return new Reservation(idd,nom,depart,destination,date,bagage);
+
+                return new Reservation(idd,nom,depart,destination,date,bagage,idsiege);
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
         return null;
     }
+
+    
+    
 
     
   

@@ -34,12 +34,13 @@ public class ServiceSiege implements ISiege<Siege> {
     @Override
     public void insert(Siege s) {
         try {
-            String query = "INSERT INTO siege ( numSiege, etat) VALUES (?, ?)";
+            String query = "INSERT INTO siege ( numSiege, etat,status) VALUES (?, ?, ?)";
             PreparedStatement statement = conn.prepareStatement(query);
             statement.setInt(1, s.getNum());
-            statement.setString(2, s.getEtat());    
+            statement.setString(2, s.getEtat()); 
+            statement.setString(3, s.getStatus());
             statement.executeUpdate();
-             System.out.println("Reservation created !");
+             System.out.println("Siege created !");
         } catch (SQLException ex) {
             System.out.println("Error while inserting the event: " + ex.getMessage());
         }   
@@ -65,11 +66,12 @@ public class ServiceSiege implements ISiege<Siege> {
     @Override
     public void update(Siege s) {
         try {
-            String query = "UPDATE siege SET numSiege = ?, etat = ? WHERE idSiege  = ?";
+            String query = "UPDATE siege SET numSiege = ?, etat = ?, status = ? WHERE idSiege  = ?";
             PreparedStatement statement = conn.prepareStatement(query);
             statement.setInt(1, s.getNum());
             statement.setString(2, s.getEtat());
-            statement.setInt(3, s.getId());
+            statement.setString(3, s.getStatus());
+            statement.setInt(4, s.getId());
             statement.executeUpdate();
         } catch (SQLException ex) {
             System.out.println("Error: " + ex.getMessage());
@@ -86,7 +88,8 @@ public class ServiceSiege implements ISiege<Siege> {
                 int id = rs.getInt("idSiege");
                 int num = rs.getInt("numSiege");
                 String etat = rs.getString("etat");
-                Siege s = new Siege(id,num,etat);
+                String status = rs.getString("status");
+                Siege s = new Siege(id,num,etat,status);
                 Sieges.add(s);
             }
         } catch (SQLException e) {
@@ -107,15 +110,36 @@ public class ServiceSiege implements ISiege<Siege> {
                 int idd = rs.getInt("idSiege");
                 int num = rs.getInt("numSiege");
                 String etat = rs.getString("etat");
+                String status = rs.getString("status");
 
-                return new Siege(idd,num,etat);
+                return new Siege(idd,num,etat,status);
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
         return null;
     }
+    @Override
+    public Siege readByEtat(String etat1) {
+    try {
+            String query = "SELECT * FROM siege WHERE etat = ?";
+            PreparedStatement statement = conn.prepareStatement(query);
+            statement.setString(1, etat1);
+            ResultSet rs = statement.executeQuery();
 
+            if (rs.next()) {
+                int idd = rs.getInt("idSiege");
+                int num = rs.getInt("numSiege");
+                String etat = rs.getString("etat");
+                String status = rs.getString("status");
+
+                return new Siege(idd,num,etat,status);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
     
   
     

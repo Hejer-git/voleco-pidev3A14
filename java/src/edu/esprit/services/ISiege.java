@@ -18,5 +18,6 @@ public interface ISiege<Siege> {
     public void update(Siege s);
     public List<Siege> readAll();
     public Siege readById(int id);
+    public Siege readByEtat(String etat1);
 }
 

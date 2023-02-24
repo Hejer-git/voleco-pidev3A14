@@ -29,47 +29,15 @@ public class NewMain {
      */
     public static void main(String[] args) {
 
-        List<Reservation> Reservations = new ArrayList<>();
-        List<Siege> Sieges = new ArrayList<>();
+        List<Siege> sieges = new ArrayList<>();
+        //User u = new User(11111111, "mhiri", "ismail", "esprit.tn", 96388611, 30000);
+        Siege s = new Siege();
 
-        long millis=System.currentTimeMillis();  
-        java.sql.Date date=new java.sql.Date(millis); 
-        
-        Reservation r = new Reservation(2,"res2","sbitla", "abilia", date, 40);
-        Reservation r1 = new Reservation();
-
-        Siege s = new Siege(122,"reserve");
-        Siege s2 = new Siege(1,120,"reserve");
-        Siege s3 = new Siege();
-        s3.setId(2);
-        
-        
-        ServiceReservation sr = new ServiceReservation();
-        ServiceSiege ss = new ServiceSiege();
-        
-        //r.setId(2);
-        //sr.update(r);
-        //r1 = sr.readById(1);
-        //Reservations = sr.readAll();
-
-        //ss.insert(s);
-        //ss.update(s2);
-        ss.delete(s3);
-        //System.out.println(r1);
-        //System.out.println(Reservations);
-        
-        Sieges = ss.readAll();
-        System.out.println(Sieges);
-
-        
-        
-        
-        //Reservation r = new Reservation();
-
-        
-        
         //u.setId(3);
-        
+        ServiceSiege service = new ServiceSiege();
+        //service.update(u);
+        //u = service.readById(1);
+        System.out.println(s);
     }
     
 }

@@ -3,11 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file://Mac/Home/Documents/PI/projpi/src/edu/esprit/services/ServiceUser.java</file>
-            <file>file://Mac/Home/Documents/PI/projpi/src/edu/esprit/entities/User.java</file>
-            <file>file://Mac/Home/Documents/PI/projpi/src/edu/esprit/utils/DataSource.java</file>
-            <file>file://Mac/Home/Documents/PI/projpi/src/edu/esprit/test/NewMain.java</file>
-            <file>file://Mac/Home/Documents/PI/projpi/src/edu/esprit/services/IUser.java</file>
+            <file>file:/C:/Users/MHIRI/Documents/projpi/src/edu/esprit/gui/GestionReservationController.java</file>
+            <file>file:/C:/Users/MHIRI/Documents/projpi/src/edu/esprit/gui/GestionSiegeController.java</file>
+            <file>file:/C:/Users/MHIRI/Documents/projpi/src/edu/esprit/test/FXMain.java</file>
         </group>
     </open-files>
 </project-private>

@@ -19,27 +19,35 @@ public class Reservation {
     private String destination;
     private Date date;
     private int bagage;
+    private int idsiege;
+    
+
+    
 
     public Reservation() {
     }
 
-    public Reservation(int id, String nom, String depart, String destination, Date date, int bagage) {
+    public Reservation(int id, String nom, String depart, String destination, Date date, int bagage,int idsiege) {
         this.id = id;
         this.nom = nom;
         this.depart = depart;
         this.destination = destination;
         this.date = date;
         this.bagage = bagage;
+        this.idsiege = idsiege;
        
     }
 
-    public Reservation(String nom, String depart, String destination, Date date, int bagage) {
+    public Reservation(String nom, String depart, String destination, Date date, int bagage,int idsiege) {
         this.nom = nom;
         this.depart = depart;
         this.destination = destination;
         this.date = date;
         this.bagage = bagage; 
+        this.idsiege = idsiege;
     }
+    
+
     public int getId() {
         return id;
     }
@@ -87,6 +95,13 @@ public class Reservation {
     public void setBagage(int bagage) {
         this.bagage = bagage;
     }
+    public int getIdSiege() {
+        return idsiege;
+    }
+
+    public void setIdSiege(int idsiege) {
+        this.idsiege = idsiege;
+    }
     
     
    @Override
@@ -97,6 +112,7 @@ public class Reservation {
                 ", destination='" + destination + '\'' +
                 ", date='" + date + '\'' +
                 ", bagage='" + bagage + '\'' +
+                 ", idsiege='" + idsiege + '\'' +
                 '}';
     }
 }
