@@ -14,10 +14,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 /**
  *
  * @author 21654
@@ -104,4 +106,33 @@ public class ServiceBagage implements IServiceB<Bagage> {
 
         return b;
     }
+    
+    
+    public List<Bagage> rechercher(int poids) {
+        List<Bagage> list = new ArrayList<>();
+          try {
+            String req = "Select * from bagage ";
+            PreparedStatement statement = cnx.prepareStatement(req);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                Bagage b = new Bagage(rs.getInt(1), rs.getFloat(2), rs.getFloat(3),rs.getFloat(4), rs.getDate(5), rs.getInt(6));
+                list.add(b);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        list=list.stream().filter(e -> String.valueOf(e.getPoids()).contains(String.valueOf(poids))).collect(Collectors.toList());
+        return list;
+    }
+    
+    public List<Bagage> TriParPoids(String sortOrder , List<Bagage> list) {
+    Comparator<Bagage> bagComparator = Comparator.comparing(Bagage::getPoids);
+    if(sortOrder.equalsIgnoreCase("ASC")){         
+        list = list.stream().sorted(bagComparator).collect(Collectors.toList());
+    } else {
+        list = list.stream().sorted(bagComparator.reversed()).collect(Collectors.toList());
+    }
+    return list;
+}
+     
 }

@@ -24,10 +24,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -47,7 +49,7 @@ public class AjouterBagageController implements Initializable {
     @FXML
     private DatePicker dpDateB;
     
-     @FXML
+    @FXML
     private ComboBox<String> cbstat;
     /**
      * Initializes the controller class.
@@ -93,10 +95,10 @@ public class AjouterBagageController implements Initializable {
         b = new Bagage(poids, taille, frais, dateB, sb.getIdStatBag());
         ServiceBagage b1 = new ServiceBagage();
              
-       /* b.setPoids(poids);
+        b.setPoids(poids);
         b.setTaille(taille);
 
-        if (b.getPoids() > 23 && b.getTaille() > 158) {
+        /*if (b.getPoids() > 23 && b.getTaille() > 158) {
             float frais;
             frais = b.getFrais() + 150;
             b.setFrais(frais);

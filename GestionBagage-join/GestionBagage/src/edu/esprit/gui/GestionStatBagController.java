@@ -73,5 +73,14 @@ public class GestionStatBagController implements Initializable {
             window.setScene(tabbleViewScene);
             window.show();
     }
+
+    @FXML
+    private void btnretour(ActionEvent event) throws IOException {
+            Parent tableViewParent = FXMLLoader.load(getClass().getResource("GestionBagage.fxml"));
+            Scene tabbleViewScene = new Scene(tableViewParent);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(tabbleViewScene);
+            window.show();
+    }
     
 }

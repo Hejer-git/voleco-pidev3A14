@@ -188,6 +188,7 @@
             </GridPane>
          </content>
       </ScrollPane>
+      <Button layoutX="360.0" layoutY="46.0" mnemonicParsing="false" onAction="#btnretour" prefHeight="42.0" prefWidth="87.0" text="Retour" />
    </children>
     
 </AnchorPane>
