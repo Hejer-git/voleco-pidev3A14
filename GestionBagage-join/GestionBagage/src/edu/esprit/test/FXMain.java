@@ -5,16 +5,20 @@
  */
 package edu.esprit.test;
 
+import edu.esprit.services.ServiceBagage;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 
 /**
  *
@@ -31,7 +35,8 @@ public class FXMain extends Application {
         parent=FXMLLoader.load(getClass().getResource("../gui/GestionBagage.fxml"));
         Scene scene=new Scene(parent);
         stage.setScene(scene);
-        stage.show();       
+        stage.show();   
+        
     }
     
 

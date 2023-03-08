@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="919.0" styleClass="home-back" stylesheets="@gestionuser.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.AjouterStatBagController">
+<AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="1143.0" styleClass="home-back" stylesheets="@gestionuser.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.AjouterStatBagController">
     <children>
       <AnchorPane layoutX="-1.0" layoutY="74.0" prefHeight="506.0" prefWidth="240.0" styleClass="sidebar">
          <children>
@@ -156,17 +156,17 @@
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="690.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="1033.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/icons8_bell_24px.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="714.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="1057.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/icons8_help_32px.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="741.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="1084.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/icons8_settings_26px.png" />
          </image>
@@ -176,24 +176,25 @@
             <Image url="@../images/icons8_slider_50px.png" />
          </image>
       </ImageView>
-      <Button layoutX="460.0" layoutY="314.0" mnemonicParsing="false" onAction="#btnajouter" prefHeight="51.0" prefWidth="118.0" text="Ajouter" />
-      <Label layoutX="332.0" layoutY="55.0" prefHeight="38.0" prefWidth="326.0" text="Ajouter un Statut Bagage" textFill="#a2bee8">
+      <Button layoutX="598.0" layoutY="442.0" mnemonicParsing="false" onAction="#btnajouter" prefHeight="51.0" prefWidth="118.0" text="Ajouter" />
+      <Label layoutX="494.0" layoutY="55.0" prefHeight="38.0" prefWidth="326.0" text="Ajouter un Statut Bagage" textFill="#a2bee8">
          <font>
             <Font name="Cambria" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="287.0" layoutY="152.0" prefHeight="29.0" prefWidth="146.0" text="Statut" textFill="#2262c6">
+      <Label layoutX="495.0" layoutY="180.0" prefHeight="29.0" prefWidth="146.0" text="Statut" textFill="#2262c6">
          <font>
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="287.0" layoutY="232.0" prefHeight="29.0" prefWidth="146.0" text="Commentaire" textFill="#2262c6">
+      <Label layoutX="495.0" layoutY="260.0" prefHeight="29.0" prefWidth="146.0" text="Commentaire" textFill="#2262c6">
          <font>
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="tfCom" layoutX="425.0" layoutY="231.0" />
-      <TextField fx:id="tfStatut" layoutX="425.0" layoutY="151.0" />
+      <TextField fx:id="tfCom" layoutX="633.0" layoutY="259.0" prefHeight="79.0" prefWidth="187.0" />
+      <TextField fx:id="tfStatut" layoutX="633.0" layoutY="179.0" />
+      <Button layoutX="1043.0" layoutY="59.0" mnemonicParsing="false" onAction="#btnretour" text="Retour" />
    </children>
     
 </AnchorPane>

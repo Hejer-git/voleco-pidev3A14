@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="919.0" styleClass="home-back" stylesheets="@gestionuser.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.GestionStatBagController">
+<AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="1143.0" styleClass="home-back" stylesheets="@gestionuser.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.GestionStatBagController">
     <children>
       <AnchorPane layoutX="-1.0" layoutY="74.0" prefHeight="506.0" prefWidth="240.0" styleClass="sidebar">
          <children>
@@ -158,17 +158,17 @@
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="690.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="1050.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/icons8_bell_24px.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="714.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="1074.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/icons8_help_32px.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="741.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="1101.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/icons8_settings_26px.png" />
          </image>
@@ -179,7 +179,7 @@
          </image>
       </ImageView>
       <Button layoutX="256.0" layoutY="46.0" mnemonicParsing="false" onAction="#btnajouter" prefHeight="42.0" prefWidth="87.0" text="Ajouter" />
-      <ScrollPane layoutX="247.0" layoutY="117.0" prefHeight="457.0" prefWidth="664.0" styleClass="transparent" stylesheets="@gestionuser.css">
+      <ScrollPane layoutX="247.0" layoutY="117.0" prefHeight="457.0" prefWidth="884.0" styleClass="transparent" stylesheets="@gestionuser.css">
          <content>
             <GridPane fx:id="grid" prefHeight="10.0" prefWidth="21.0" stylesheets="@gestionuser.css">
               <columnConstraints>

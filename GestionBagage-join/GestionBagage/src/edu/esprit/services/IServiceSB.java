@@ -21,4 +21,5 @@ public interface IServiceSB <T>{
     public List<T> getAllSB();
     public T getSBById(int idStatBag);
     public StatutBagage readByStat(String statutB);
+    public T getOneByStat(String statut);
 }

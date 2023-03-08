@@ -31,7 +31,6 @@ public class ServiceStatBag implements IServiceSB<StatutBagage>{
 
            try {
             String req = "INSERT INTO `statutbagage` (`statutB`, `comB`) VALUES ('" + sb.getStatutB()+ "','" + sb.getComB()+ "' )";
-
          Statement st = cnx.createStatement();
             st.executeUpdate(req);
             System.out.println("StatutBagage created !");
@@ -87,12 +86,23 @@ public class ServiceStatBag implements IServiceSB<StatutBagage>{
     @Override
     public StatutBagage getSBById(int idStatBag) {
         StatutBagage sb = null;
-        try {
-            String req = "Select * from statutbagage";
+     /*   try {
+            String req = "Select * from statutbagage ";
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
                 sb = new StatutBagage(rs.getInt(1), rs.getString(2), rs.getString(3));
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }*/
+      try {
+            String query = "SELECT * FROM statutbagage WHERE idStatBag = ?";
+            PreparedStatement statement = cnx.prepareStatement(query);
+            statement.setInt(1, idStatBag);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                sb = new StatutBagage(rs.getInt(1), rs.getString("statutB"), rs.getString("comB"));
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -121,4 +131,24 @@ public class ServiceStatBag implements IServiceSB<StatutBagage>{
         }
         return null;
     }
+    
+     public StatutBagage getOneByStat(String statut) {
+        StatutBagage sb = null;
+        try {
+            String query = "SELECT * FROM statutbagage WHERE statutB = ?";
+            PreparedStatement statement = cnx.prepareStatement(query);
+            statement.setString(1, statut);
+            ResultSet rs = statement.executeQuery();
+
+            while (rs.next()) {
+                sb = new StatutBagage(rs.getInt(1),rs.getString(2), rs.getString(3));
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return sb;
+    }
+     
+     
 }

@@ -7,42 +7,42 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="63.0" prefWidth="670.0" stylesheets="@gestionuser.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.BagageItemController">
+<AnchorPane id="AnchorPane" prefHeight="64.0" prefWidth="898.0" stylesheets="@gestionuser.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.BagageItemController">
    <children>
-      <HBox layoutX="10.0" layoutY="8.0" prefHeight="45.0" prefWidth="648.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10px;" styleClass="card-user" stylesheets="@gestionuser.css">
+      <HBox layoutX="2.0" layoutY="9.0" prefHeight="45.0" prefWidth="877.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10px;" styleClass="card-user" stylesheets="@gestionuser.css">
          <children>
             <Label fx:id="idlabel" textFill="WHITE" />
-            <Label fx:id="poidslabel" alignment="CENTER" prefHeight="45.0" prefWidth="64.0" text="Poids" textAlignment="CENTER">
+            <Label fx:id="poidslabel" alignment="CENTER" prefHeight="45.0" prefWidth="87.0" text="Poids" textAlignment="CENTER">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="taillelabel" alignment="CENTER" prefHeight="45.0" prefWidth="94.0" text="Taille" textAlignment="CENTER">
+            <Label fx:id="taillelabel" alignment="CENTER" prefHeight="45.0" prefWidth="119.0" text="Taille" textAlignment="CENTER">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="fraislabel" alignment="CENTER" prefHeight="45.0" prefWidth="94.0" text="Frais" textAlignment="CENTER">
+            <Label fx:id="fraislabel" alignment="CENTER" prefHeight="45.0" prefWidth="125.0" text="Frais" textAlignment="CENTER">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="datelabel" alignment="CENTER" prefHeight="45.0" prefWidth="101.0" text="Date" textAlignment="CENTER">
+            <Label fx:id="datelabel" alignment="CENTER" prefHeight="45.0" prefWidth="141.0" text="Date" textAlignment="CENTER">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="statlabel" alignment="CENTER" layoutX="280.0" layoutY="10.0" prefHeight="45.0" prefWidth="104.0" text="Statut" textAlignment="CENTER">
+            <Label fx:id="statlabel" alignment="CENTER" layoutX="280.0" layoutY="10.0" prefHeight="45.0" prefWidth="201.0" text="Statut" textAlignment="CENTER">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.0" />
                </font>
             </Label>
-            <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#btnmodif" prefHeight="31.0" prefWidth="89.0" text="Modifier">
+            <Button alignment="BOTTOM_CENTER" layoutX="655.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnmodif" prefHeight="31.0" prefWidth="101.0" text="Modifier">
                <HBox.margin>
                   <Insets right="5.0" top="10.0" />
                </HBox.margin>
             </Button>
-            <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#btnsupp" prefHeight="31.0" prefWidth="89.0" text="Supprimer">
+            <Button alignment="BOTTOM_CENTER" layoutX="655.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnsupp" prefHeight="31.0" prefWidth="101.0" text="Supprimer">
                <HBox.margin>
                   <Insets right="5.0" top="10.0" />
                </HBox.margin>

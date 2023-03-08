@@ -8,11 +8,13 @@ package edu.esprit.services;
 import edu.esprit.entities.Bagage;
 import edu.esprit.utils.DataSource;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Date;
@@ -30,12 +32,10 @@ public class ServiceBagage implements IServiceB<Bagage> {
     
     @Override
      public void ajouter(Bagage b) {
-      //  String pattern = "yyyy-MM-dd";
-      //  SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-      // String date1 = simpleDateFormat.format(new Date());
+        LocalDate dateB = LocalDate.now();
 
            try {
-            String req = "INSERT INTO `bagage` (`poids`, `taille`, `frais`, `dateB`,`idStatBag`) VALUES ('" + b.getPoids()+ "','" + b.getTaille()+ "', '" + b.getFrais()+ "', '" + b.getDateB() + "', '" + b.getIdStatBag()+ "')";
+            String req = "INSERT INTO `bagage` (`poids`, `taille`, `frais`, `dateB`,`idStatBag`) VALUES ('" + b.getPoids()+ "','" + b.getTaille()+ "', '" + b.getFrais()+ "', '" + b.getDateB() + "', '" + b.getidStatBag()+ "')";
 
          Statement st = cnx.createStatement();
             st.executeUpdate(req);
@@ -45,7 +45,6 @@ public class ServiceBagage implements IServiceB<Bagage> {
         }
         
     }
-    
     
     @Override
     public void supprimer(Bagage b) {
@@ -62,7 +61,7 @@ public class ServiceBagage implements IServiceB<Bagage> {
     @Override
     public void modifier(Bagage b) {
         try {
-            String req = "UPDATE `bagage` SET `poids` = '" + b.getPoids()+ "', `taille` = '" + b.getTaille()+ "', `frais` = '" + b.getFrais()+ "', `dateB` = '" + b.getDateB()+ "', `idStatBag` = '" + b.getIdStatBag()+ "' WHERE `bagage`.`idBagage` = " + b.getIdBagage();
+            String req = "UPDATE `bagage` SET `poids` = '" + b.getPoids()+ "', `taille` = '" + b.getTaille()+ "', `frais` = '" + b.getFrais()+ "', `dateB` = '" + b.getDateB()+ "', `idStatBag` = '" + b.getidStatBag()+ "' WHERE `bagage`.`idBagage` = " + b.getIdBagage();
             Statement st = cnx.createStatement();
             st.executeUpdate(req);
             System.out.println("Bagage updated !");
@@ -134,5 +133,78 @@ public class ServiceBagage implements IServiceB<Bagage> {
     }
     return list;
 }
+    
+    
+    public int countRetrouves() {
+        int nbRetrouves = 0;
+        try {
+            String req = "SELECT COUNT(*) AS nbRetrouves FROM bagage "
+                       + "JOIN statutbagage ON bagage.idStatBag = statutbagage.idStatBag "
+                       + "WHERE statutbagage.statutB = ?";
+            PreparedStatement ps = cnx.prepareStatement(req);
+            ps.setString(1, "Bagage retrouvé");
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                nbRetrouves = rs.getInt("nbRetrouves");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return nbRetrouves;
+    }
+    
+    public int countPerdus() {
+        int nbPerdus = 0;
+        try {
+            String req = "SELECT COUNT(*) AS nbPerdus FROM bagage "
+                       + "JOIN statutbagage ON bagage.idStatBag = statutbagage.idStatBag "
+                       + "WHERE statutbagage.statutB = ?";
+            PreparedStatement ps = cnx.prepareStatement(req);
+            ps.setString(1, "Bagage perdu");
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                nbPerdus = rs.getInt("nbPerdus");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return nbPerdus;
+    }
+    
+    public int countVoles() {
+        int nbVoles = 0;
+        try {
+            String req = "SELECT COUNT(*) AS nbVoles FROM bagage "
+                       + "JOIN statutbagage ON bagage.idStatBag = statutbagage.idStatBag "
+                       + "WHERE statutbagage.statutB = ?";
+            PreparedStatement ps = cnx.prepareStatement(req);
+            ps.setString(1, "Bagage volé");
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                nbVoles = rs.getInt("nbVoles");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return nbVoles;
+    }
+    
+     public int countSuspect() {
+        int nbSusps = 0;
+        try {
+            String req = "SELECT COUNT(*) AS nbSusps FROM bagage "
+                       + "JOIN statutbagage ON bagage.idStatBag = statutbagage.idStatBag "
+                       + "WHERE statutbagage.statutB = ?";
+            PreparedStatement ps = cnx.prepareStatement(req);
+            ps.setString(1, "Bagage suspect");
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                nbSusps = rs.getInt("nbSusps");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return nbSusps;
+    }
      
 }

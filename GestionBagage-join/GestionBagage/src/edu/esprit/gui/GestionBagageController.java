@@ -9,6 +9,8 @@ import edu.esprit.entities.Bagage;
 import edu.esprit.services.ServiceBagage;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -20,15 +22,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -40,18 +46,16 @@ public class GestionBagageController implements Initializable {
     /**
      * Initializes the controller class.
      */
-     private Label label;
+    private List<Bagage> bagages = new ArrayList<>();
     @FXML
     private GridPane grid;
-
-    private List<Bagage> bagages = new ArrayList<>();
     @FXML
     private TextField tfrech;
     @FXML
     private ComboBox<String> cbtri;
     
      public  ObservableList<String> options = FXCollections.observableArrayList( "ASC", "DESC" );
-    
+     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -63,6 +67,8 @@ public class GestionBagageController implements Initializable {
         Bagage b = new Bagage();
         ServiceBagage s1 = new ServiceBagage();
         bagages = s1.getAllB();
+        
+        
 
         for (int i = 0; i < bagages.size(); i++){
             try {
@@ -79,6 +85,7 @@ public class GestionBagageController implements Initializable {
                 Logger.getLogger(GestionStatBagController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        
     }    
 
     @FXML
@@ -181,7 +188,7 @@ public class GestionBagageController implements Initializable {
             // handle case where idVol is not a valid integer
         }
 }
-
+       
     @FXML
     private void btnretour(ActionEvent event) throws IOException {
          Parent tableViewParent = FXMLLoader.load(getClass().getResource("GestionBagage.fxml"));
@@ -190,8 +197,51 @@ public class GestionBagageController implements Initializable {
             window.setScene(tabbleViewScene);
             window.show();
     }
-    
+
+    @FXML
+    private void btnnotif(MouseEvent event) {
+          //notification bagage retrouvé
+        ServiceBagage s1 = new ServiceBagage();
+         int nbRetrouves = s1.countRetrouves();
+        String message = " " + nbRetrouves + " bagages ont été retrouvés.";
+         Notifications notificationBuilder = Notifications.create()
+            .title("Nouveau rapport de bagages")
+            .text(message)
+            .hideAfter(Duration.seconds(10))
+            .position(Pos.TOP_RIGHT);
+           notificationBuilder.show();
+           
+        //notification bagage perdu
+         int nbPerdus = s1.countPerdus();
+        String message1 = " " + nbPerdus + " bagages ont été perdus.";
+        Notifications notificationBuilder1 = Notifications.create()
+            .title("Nouveau rapport de bagages")
+            .text(message1)
+            .hideAfter(Duration.seconds(10))
+            .position(Pos.TOP_RIGHT);
+           notificationBuilder1.show();
+           //notification bagage volé
+         int nbVoles = s1.countVoles();
+        String message2 = " " + nbVoles + " bagages ont été volés.";
+        Notifications notificationBuilder2 = Notifications.create()
+            .title("Nouveau rapport de bagages")
+            .text(message2)
+            .hideAfter(Duration.seconds(10))
+            .position(Pos.TOP_RIGHT);
+           notificationBuilder2.show();   
+             //notification bagage suspect
+         int nbSusps = s1.countSuspect();
+        String message3 = " " + nbSusps + " bagages ont été suspectés.";
+        Notifications notificationBuilder3 = Notifications.create()
+            .title("Nouveau rapport de bagages")
+            .text(message3)
+            .hideAfter(Duration.seconds(10))
+            .position(Pos.TOP_RIGHT);
+           notificationBuilder3.show();   
+           
+    }
+   
         
-    }    
+}    
     
 

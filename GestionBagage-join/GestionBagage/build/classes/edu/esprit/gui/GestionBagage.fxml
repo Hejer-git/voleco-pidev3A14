@@ -148,8 +148,6 @@
                   <Insets left="5.0" />
                </padding>
             </HBox>
-            <Button layoutX="20.0" layoutY="412.0" mnemonicParsing="false" onAction="#btnstat" text="Statistique" />
-            <Button layoutX="136.0" layoutY="412.0" mnemonicParsing="false" onAction="#btnretour" prefHeight="31.0" prefWidth="67.0" text="Retour" />
          </children>
       </AnchorPane>
       <ImageView fitHeight="160.0" fitWidth="159.0" layoutX="-10.0" layoutY="-30.0" pickOnBounds="true" preserveRatio="true">
@@ -162,17 +160,17 @@
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="690.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="1050.0" layoutY="30.0" onMouseClicked="#btnnotif" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/icons8_bell_24px.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="714.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="1074.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/icons8_help_32px.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="741.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="1101.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/icons8_settings_26px.png" />
          </image>
@@ -182,8 +180,8 @@
             <Image url="@../images/icons8_slider_50px.png" />
          </image>
       </ImageView>
-      <Button layoutX="247.0" layoutY="58.0" mnemonicParsing="false" onAction="#btnajouter" prefHeight="42.0" prefWidth="87.0" text="Ajouter" />
-      <ScrollPane layoutX="247.0" layoutY="117.0" prefHeight="457.0" prefWidth="664.0" styleClass="transparent" stylesheets="@gestionuser.css">
+      <Button layoutX="240.0" layoutY="53.0" mnemonicParsing="false" onAction="#btnajouter" prefHeight="42.0" prefWidth="87.0" text="Ajouter" />
+      <ScrollPane layoutX="247.0" layoutY="117.0" prefHeight="457.0" prefWidth="896.0" styleClass="transparent" stylesheets="@gestionuser.css">
          <content>
             <GridPane fx:id="grid" prefHeight="10.0" prefWidth="21.0" stylesheets="@gestionuser.css">
               <columnConstraints>
@@ -192,11 +190,13 @@
             </GridPane>
          </content>
       </ScrollPane>
-      <Button layoutX="353.0" layoutY="58.0" mnemonicParsing="false" onAction="#btnstatbag" prefHeight="42.0" prefWidth="121.0" text="Statut Bagage" />
-      <TextField fx:id="tfrech" layoutX="492.0" layoutY="64.0" prefHeight="31.0" prefWidth="121.0" promptText="rechercher" />
-      <Button layoutX="625.0" layoutY="64.0" mnemonicParsing="false" onAction="#btnrech" text="Rechercher" />
+      <Button layoutX="345.0" layoutY="53.0" mnemonicParsing="false" onAction="#btnstatbag" prefHeight="42.0" prefWidth="121.0" text="Statut Bagage" />
+      <TextField fx:id="tfrech" layoutX="481.0" layoutY="64.0" prefHeight="31.0" prefWidth="121.0" promptText="rechercher" />
+      <Button layoutX="620.0" layoutY="64.0" mnemonicParsing="false" onAction="#btnrech" text="Rechercher" />
       <ComboBox fx:id="cbtri" layoutX="732.0" layoutY="64.0" prefHeight="31.0" prefWidth="121.0" promptText="DES/ASC" />
-      <Button layoutX="857.0" layoutY="64.0" mnemonicParsing="false" onAction="#btntri" text="Trier" />
+      <Button layoutX="866.0" layoutY="64.0" mnemonicParsing="false" onAction="#btntri" text="Trier" />
+      <Button layoutX="932.0" layoutY="64.0" mnemonicParsing="false" onAction="#btnstat" text="Statistique" />
+      <Button layoutX="1031.0" layoutY="64.0" mnemonicParsing="false" onAction="#btnretour" prefHeight="31.0" prefWidth="67.0" text="Retour" />
    </children>
     
 </AnchorPane>

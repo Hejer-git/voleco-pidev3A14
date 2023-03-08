@@ -15,23 +15,29 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.BarChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
+
 
 /**
  * FXML Controller class
@@ -44,9 +50,7 @@ public class AjouterBagageController implements Initializable {
     private TextField tfPoids;
     @FXML
     private TextField tfTaille;
-    @FXML
     private TextField tfFrais;
-    @FXML
     private DatePicker dpDateB;
     
     @FXML
@@ -70,19 +74,51 @@ public class AjouterBagageController implements Initializable {
     
     @FXML
     private void btnajouter(ActionEvent event) throws IOException {
-        float poids = Float.parseFloat(tfPoids.getText());
-        float taille = Float.parseFloat(tfTaille.getText());
-        float frais = Float.parseFloat(tfFrais.getText());
-        LocalDate date = dpDateB.getValue();
+       // float poids = Float.parseFloat(tfPoids.getText());
+       // float taille = Float.parseFloat(tfTaille.getText());
+        
+        String poidsStr = tfPoids.getText();
+        String tailleStr = tfTaille.getText();
+          if (poidsStr.isEmpty() || tailleStr.isEmpty()) {
+         Alert alert = new Alert(Alert.AlertType.ERROR);
+         alert.setTitle("Erreur de saisie");
+         alert.setHeaderText("Certains champs sont vides");
+         alert.setContentText("Veuillez saisir un poids et une taille valides");
+         alert.showAndWait();
+         return;
+        }
+        float poids = Float.parseFloat(poidsStr);
+        float taille = Float.parseFloat(tailleStr);
+        LocalDate date = LocalDate.now();
         Date dateB = java.sql.Date.valueOf(date);
-        String statutB=cbstat.getValue(); 
+        
+        String statutB=cbstat.getValue();
+        ServiceBagage b1 = new ServiceBagage();
         ServiceStatBag ssb = new ServiceStatBag();
         StatutBagage sb = new StatutBagage();
-        sb = ssb.readByStat(statutB);
-
-       
+        sb = ssb.getOneByStat(statutB);
+        
+        float frais = 0;
+        Bagage b;
+        b = new Bagage(poids, taille, frais, dateB, sb.getIdStatBag());
+  
         // Vérification des champs
-        if (poids<=0 || taille<=0 || frais < 0) {
+        if (b.getPoids() > 23 ) 
+        {
+            frais += (b.getPoids() - 23) * 15; // Augmenter les frais de 15dt par kilo supplémentaire
+            b.setFrais(frais);
+        }
+        
+        if ( b.getTaille() > 158)
+        {
+            frais += (b.getTaille() - 158) * 10;  // Augmenter les frais de 10dt par cm supplémentaire
+            b.setFrais(frais);
+        }
+        
+
+        
+        
+          if (  b.getPoids()>32 || b.getPoids()<=0 || b.getTaille()<=0 || b.getTaille()>203 ) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erreur de saisie");
             alert.setHeaderText("Certains champs sont incorrects");
@@ -90,35 +126,83 @@ public class AjouterBagageController implements Initializable {
             alert.showAndWait();
             return;
         }
-     
-        Bagage b;
-        b = new Bagage(poids, taille, frais, dateB, sb.getIdStatBag());
-        ServiceBagage b1 = new ServiceBagage();
-             
-        b.setPoids(poids);
-        b.setTaille(taille);
-
-        /*if (b.getPoids() > 23 && b.getTaille() > 158) {
-            float frais;
-            frais = b.getFrais() + 150;
-            b.setFrais(frais);
-        }
-             tfFrais.setText(String.valueOf(b.getFrais()));*/
-            b1.ajouter(b); 
-             
-        // Confirmation de l'ajout
+           
+           // Confirmation de l'ajout
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmation");
         alert.setHeaderText("Voulez-vous vraiment ajouter ce Bagage ?");
         alert.setContentText("Poids : " + poids + "\nTaille : " + taille + "\nFrais : " + frais + "\nDate : " + dateB + "\nStatut : " + statutB);
-        alert.showAndWait();
+         Optional<ButtonType> result=alert.showAndWait();
         
+         
+         if(result.get()==ButtonType.OK){
+        b1.ajouter(b);
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("GestionBagage.fxml"));
         Scene tabbleViewScene = new Scene(tableViewParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(tabbleViewScene);
         window.show();
+          }
+          else if(result.get()==ButtonType.CANCEL){
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("GestionBagage.fxml"));
+        Scene tabbleViewScene = new Scene(tableViewParent);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(tabbleViewScene);
+        window.show(); 
+         }   
+           
+  }
+
+    @FXML
+    private void btnretour(ActionEvent event) throws IOException {
+            Parent tableViewParent = FXMLLoader.load(getClass().getResource("GestionBagage.fxml"));
+            Scene tabbleViewScene = new Scene(tableViewParent);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(tabbleViewScene);
+            window.show();
+    }
+
+    @FXML
+    private void btnnotif(MouseEvent event) {
+         //notification bagage retrouvé
+        ServiceBagage s1 = new ServiceBagage();
+         int nbRetrouves = s1.countRetrouves();
+        String message = " " + nbRetrouves + " bagages ont été retrouvés.";
+         Notifications notificationBuilder = Notifications.create()
+            .title("Nouveau rapport de bagages")
+            .text(message)
+            .hideAfter(Duration.seconds(10))
+            .position(Pos.TOP_RIGHT);
+           notificationBuilder.show();
+           
+        //notification bagage perdu
+         int nbPerdus = s1.countPerdus();
+        String message1 = " " + nbPerdus + " bagages ont été perdus.";
+        Notifications notificationBuilder1 = Notifications.create()
+            .title("Nouveau rapport de bagages")
+            .text(message1)
+            .hideAfter(Duration.seconds(10))
+            .position(Pos.TOP_RIGHT);
+           notificationBuilder1.show();
+           //notification bagage volé
+         int nbVoles = s1.countVoles();
+        String message2 = " " + nbVoles + " bagages ont été volés.";
+        Notifications notificationBuilder2 = Notifications.create()
+            .title("Nouveau rapport de bagages")
+            .text(message2)
+            .hideAfter(Duration.seconds(10))
+            .position(Pos.TOP_RIGHT);
+           notificationBuilder2.show();   
+             //notification bagage suspect
+         int nbSusps = s1.countSuspect();
+        String message3 = " " + nbSusps + " bagages ont été suspectés.";
+        Notifications notificationBuilder3 = Notifications.create()
+            .title("Nouveau rapport de bagages")
+            .text(message3)
+            .hideAfter(Duration.seconds(10))
+            .position(Pos.TOP_RIGHT);
+           notificationBuilder3.show();   
     }
     
-    
+      
 }

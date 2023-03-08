@@ -6,6 +6,7 @@
 package edu.esprit.gui;
 
 import edu.esprit.entities.Bagage;
+import edu.esprit.services.ServiceBagage;
 import edu.esprit.utils.DataSource;
 import java.io.IOException;
 import java.net.URL;
@@ -23,6 +24,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.geometry.Side;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -31,10 +33,11 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.PieChart;
-import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -66,21 +69,20 @@ public class StatistiqueController implements Initializable {
     
      private void stat() {
           try{
-           // String query ="select COUNT(*),reservation_voyage.travel_class from voyage INNER JOIN reservation_voyage on reservation_voyage.voyage_id =voyage.id GROUP BY travel_class;";
-           //String query ="select COUNT(*),`prix`  from voyage GROUP BY `destination`;";
-           String query ="select COUNT(*),`idStatBag` from bagage GROUP BY `idStatBag`;";
+           //String query ="select COUNT(*),`idStatBag` from bagage GROUP BY `idStatBag`;";
+           String query ="SELECT statutbagage.statutB, COUNT(*) FROM bagage INNER JOIN statutbagage ON bagage.idStatBag = statutbagage.idStatBag GROUP BY statutbagage.statutB;";
 
            PreparedStatement PreparedStatement = cnx.prepareStatement(query);
              rs = PreparedStatement.executeQuery();
              while (rs.next()){               
-               data.add(new PieChart.Data(rs.getString("idStatBag"),rs.getInt("COUNT(*)")));
+               data.add(new PieChart.Data(rs.getString("statutB"),rs.getInt("COUNT(*)")));
             }  
              
         } catch (SQLException ex) {
               System.out.println(ex.getMessage());
         }        
      //   piechart.setTitle("Analyse des statistiques des bagages perdus");
-        piechart.setLegendSide(Side.LEFT);
+        piechart.setLegendSide(Side.TOP);
         piechart.setData(data);
     }
 
@@ -91,6 +93,48 @@ public class StatistiqueController implements Initializable {
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(tabbleViewScene);
         window.show();
+    }
+
+    @FXML
+    private void btnnotif(MouseEvent event) {
+          //notification bagage retrouvé
+        ServiceBagage s1 = new ServiceBagage();
+         int nbRetrouves = s1.countRetrouves();
+        String message = " " + nbRetrouves + " bagages ont été retrouvés.";
+         Notifications notificationBuilder = Notifications.create()
+            .title("Nouveau rapport de bagages")
+            .text(message)
+            .hideAfter(Duration.seconds(10))
+            .position(Pos.TOP_RIGHT);
+           notificationBuilder.show();
+           
+        //notification bagage perdu
+         int nbPerdus = s1.countPerdus();
+        String message1 = " " + nbPerdus + " bagages ont été perdus.";
+        Notifications notificationBuilder1 = Notifications.create()
+            .title("Nouveau rapport de bagages")
+            .text(message1)
+            .hideAfter(Duration.seconds(10))
+            .position(Pos.TOP_RIGHT);
+           notificationBuilder1.show();
+           //notification bagage volé
+         int nbVoles = s1.countVoles();
+        String message2 = " " + nbVoles + " bagages ont été volés.";
+        Notifications notificationBuilder2 = Notifications.create()
+            .title("Nouveau rapport de bagages")
+            .text(message2)
+            .hideAfter(Duration.seconds(10))
+            .position(Pos.TOP_RIGHT);
+           notificationBuilder2.show();   
+             //notification bagage suspect
+         int nbSusps = s1.countSuspect();
+        String message3 = " " + nbSusps + " bagages ont été suspectés.";
+        Notifications notificationBuilder3 = Notifications.create()
+            .title("Nouveau rapport de bagages")
+            .text(message3)
+            .hideAfter(Duration.seconds(10))
+            .position(Pos.TOP_RIGHT);
+           notificationBuilder3.show();   
     }
     
 }

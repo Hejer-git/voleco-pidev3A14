@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="63.0" prefWidth="670.0" stylesheets="@gestionuser.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.StatBagItemController">
+<AnchorPane id="AnchorPane" prefHeight="63.0" prefWidth="985.0" stylesheets="@gestionuser.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.StatBagItemController">
    <children>
-      <HBox layoutX="10.0" layoutY="8.0" prefHeight="45.0" prefWidth="648.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10px;" styleClass="card-user" stylesheets="@gestionuser.css">
+      <HBox layoutX="10.0" layoutY="8.0" prefHeight="45.0" prefWidth="879.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10px;" styleClass="card-user" stylesheets="@gestionuser.css">
          <children>
             <Label fx:id="idlabel" textFill="WHITE" />
             <Label fx:id="statutlabel" alignment="CENTER" prefHeight="45.0" prefWidth="217.0" text="Statut" textAlignment="CENTER">
@@ -17,17 +17,17 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="comlabel" alignment="CENTER" prefHeight="45.0" prefWidth="221.0" text="Commentaire" textAlignment="CENTER">
+            <Label fx:id="comlabel" alignment="CENTER" prefHeight="45.0" prefWidth="363.0" text="Commentaire" textAlignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#btnmodif" prefHeight="31.0" prefWidth="89.0" text="Modifier">
+            <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#btnmodif" prefHeight="31.0" prefWidth="127.0" text="Modifier">
                <HBox.margin>
                   <Insets right="5.0" top="10.0" />
                </HBox.margin>
             </Button>
-            <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#btnsupp" prefHeight="31.0" prefWidth="89.0" text="Supprimer">
+            <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#btnsupp" prefHeight="31.0" prefWidth="125.0" text="Supprimer">
                <HBox.margin>
                   <Insets right="5.0" top="10.0" />
                </HBox.margin>

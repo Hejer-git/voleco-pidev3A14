@@ -7,6 +7,7 @@ package edu.esprit.entities;
 
 import java.util.Date;
 
+
 /**
  *
  * @author 21654
@@ -17,6 +18,7 @@ public class Bagage {
     private float poids, taille, frais;
     private Date dateB;
     private int idStatBag;
+    private String statut;
 
     public Bagage() {
     }
@@ -79,12 +81,28 @@ public class Bagage {
         this.dateB = dateB;
     }
 
-    public int getIdStatBag() {
+    /* public int getIdStatBag() {
         return idStatBag;
     }
 
     public void setIdStatBag(int idStatBag) {
         this.idStatBag = idStatBag;
+    }*/
+    
+    public int getidStatBag() {
+        return idStatBag;
+    }
+
+    public void setidStatBag(int idStatBag) {
+        this.idStatBag = idStatBag;
+    }
+    
+    public String getIdStatBag() {
+        return statut;
+    }
+
+    public void setIdStatBag(String statut) {
+        this.statut = statut;
     }
     
     @Override

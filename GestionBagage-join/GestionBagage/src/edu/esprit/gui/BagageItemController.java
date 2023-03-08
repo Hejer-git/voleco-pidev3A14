@@ -11,6 +11,7 @@ import edu.esprit.services.ServiceBagage;
 import edu.esprit.services.ServiceStatBag;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,6 +21,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javax.xml.bind.Marshaller.Listener;
@@ -61,11 +63,8 @@ public class BagageItemController implements Initializable {
         fraislabel.setText(String.valueOf(b.getFrais()));
         datelabel.setText(String.valueOf(b.getDateB()));
         ServiceStatBag ssb = new ServiceStatBag();
-        StatutBagage sb = new StatutBagage();
-        sb = ssb.getSBById(b.getIdStatBag());
-        statlabel.setText(sb.getStatutB());
-
-        
+        StatutBagage sb = ssb.getSBById(b.getidStatBag());
+        statlabel.setText(sb.getStatutB());      
 }
 
     @FXML
@@ -81,19 +80,29 @@ public class BagageItemController implements Initializable {
     @FXML
     private void btnsupp(ActionEvent event) throws IOException {
         ServiceBagage sb = new ServiceBagage();
-        sb.supprimer(b);
-        
-         // Confirmation de la modification
+       
+         // Confirmation de la suppression
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmation");
         alert.setHeaderText("Voulez-vous vraiment supprimer ce Bagage ?");
         alert.setContentText("" );
-        alert.showAndWait();
-        
+         Optional<ButtonType> result=alert.showAndWait();
+         if(result.get()==ButtonType.OK){
+        sb.supprimer(b);
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("GestionBagage.fxml"));
         Scene tabbleViewScene = new Scene(tableViewParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(tabbleViewScene);
         window.show();
+        }
+        else if(result.get()==ButtonType.CANCEL){
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("GestionBagage.fxml"));
+        Scene tabbleViewScene = new Scene(tableViewParent);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(tabbleViewScene);
+        window.show();
+        
     }
+        
+   }
 }
