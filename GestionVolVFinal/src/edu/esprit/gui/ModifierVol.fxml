@@ -181,24 +181,30 @@
       </ImageView>
       <Label layoutX="676.0" layoutY="491.0" prefHeight="21.0" prefWidth="77.0" text="NomAvion" />
       <Label layoutX="680.0" layoutY="126.0" prefHeight="21.0" prefWidth="68.0" text="DureeVol" />
-      <Label layoutX="265.0" layoutY="235.0" prefHeight="21.0" prefWidth="68.0" text="HeureDep" />
-      <Label layoutX="684.0" layoutY="235.0" prefHeight="21.0" prefWidth="61.0" text="HeureArr" />
-      <Label layoutX="265.0" layoutY="365.0" prefHeight="21.0" prefWidth="61.0" text="DateDep" />
+      <Label layoutX="265.0" layoutY="220.0" prefHeight="21.0" prefWidth="68.0" text="HeureDep" />
+      <Label layoutX="684.0" layoutY="220.0" prefHeight="21.0" prefWidth="61.0" text="HeureArr" />
+      <Label layoutX="265.0" layoutY="402.0" prefHeight="21.0" prefWidth="61.0" text="DateDep" />
       <TextField fx:id="editDureeVol" layoutX="811.0" layoutY="121.0" prefHeight="31.0" prefWidth="196.0" />
      
-      <DatePicker fx:id="editDateDep" layoutX="372.0" layoutY="360.0" prefHeight="31.0" prefWidth="205.0" />
-      <DatePicker fx:id="editDateArr" layoutX="807.0" layoutY="360.0" prefHeight="31.0" prefWidth="196.0" />
-      <Label layoutX="689.0" layoutY="365.0" prefHeight="21.0" prefWidth="52.0" text="DateArr" />
-      <TextField fx:id="editNunVol" layoutX="374.0" layoutY="121.0" />
+      <DatePicker fx:id="editDateDep" layoutX="374.0" layoutY="397.0" prefHeight="31.0" prefWidth="205.0" />
+      <DatePicker fx:id="editDateArr" layoutX="802.0" layoutY="397.0" prefHeight="31.0" prefWidth="205.0" />
+      <Label layoutX="685.0" layoutY="402.0" prefHeight="21.0" prefWidth="52.0" text="DateArr" />
+      <TextField fx:id="editNunVol" layoutX="374.0" layoutY="121.0" prefHeight="31.0" prefWidth="205.0" />
       <Label layoutX="268.0" layoutY="126.0" prefHeight="21.0" prefWidth="61.0" text="NumVol" />
        <Button layoutX="940.0" layoutY="669.0" mnemonicParsing="false" onAction="#btnedit" prefHeight="31.0" prefWidth="111.0" text="Modifier" />
       <ComboBox fx:id="editcombo" layoutX="807.0" layoutY="486.0" prefHeight="31.0" prefWidth="196.0" />
-      <JFXTimePicker fx:id="editHeureDep1" layoutX="374.0" layoutY="230.0" />
-      <JFXTimePicker fx:id="editHeureArr1" layoutX="807.0" layoutY="230.0" />
+      <JFXTimePicker fx:id="editHeureDep1" layoutX="372.0" layoutY="215.0" />
+      <JFXTimePicker fx:id="editHeureArr1" layoutX="807.0" layoutY="215.0" />
       <Button fx:id="btnMapDep" layoutX="253.0" layoutY="486.0" mnemonicParsing="false" onAction="#btnLocDep" prefHeight="31.0" prefWidth="96.0" text="Depart" />
       <Button fx:id="btnMapArr" layoutX="253.0" layoutY="590.0" mnemonicParsing="false" onAction="#btnLocArr" text="Destination" />
       <TextField fx:id="tfModifMapDep" layoutX="372.0" layoutY="486.0" prefHeight="31.0" prefWidth="205.0" />
       <TextField fx:id="tfModifMapArr" layoutX="374.0" layoutY="590.0" prefHeight="31.0" prefWidth="205.0" />
+      <Label layoutX="688.0" layoutY="595.0" prefHeight="21.0" prefWidth="35.0" text="Prix" />
+      <TextField fx:id="tfprixmodif" layoutX="803.0" layoutY="590.0" prefHeight="31.0" prefWidth="196.0" />
+      <Label layoutX="272.0" layoutY="310.0" text="AeoDep" />
+      <Label layoutX="687.0" layoutY="310.0" text="AeoArr" />
+      <TextField fx:id="editAeoDep" layoutX="374.0" layoutY="305.0" prefHeight="31.0" prefWidth="205.0" />
+      <TextField fx:id="editAeoArr" layoutX="803.0" layoutY="305.0" prefHeight="31.0" prefWidth="205.0" />
    </children>
     
 </AnchorPane>

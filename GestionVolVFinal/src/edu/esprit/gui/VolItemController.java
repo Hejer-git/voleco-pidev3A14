@@ -60,6 +60,12 @@ public class VolItemController implements Initializable {
     private Label AdrDeplabel;
     @FXML
     private Label AdrArrlabel;
+    @FXML
+    private Label prixVollabel;
+    @FXML
+    private Label AeoDeplabel;
+    @FXML
+    private Label AeoArrlabel;
     /**
      * Initializes the controller class.
      * @param url
@@ -86,6 +92,12 @@ public class VolItemController implements Initializable {
         NomAvionlabel.setText(avion.getNomAvion());
         dateDeplabel.setText(String.valueOf(v.getDateDep()));
         dateArrlabel.setText(String.valueOf(v.getDateArr()));
+        
+        prixVollabel.setText(String.valueOf(v.getPrix()));
+        
+        AeoDeplabel.setText(v.getAeoDep());
+        AeoArrlabel.setText(v.getAeoArr());
+        
     }
 /*
     @FXML

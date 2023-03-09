@@ -38,7 +38,7 @@ public class ServiceVol implements IServiceVol<Vol> {
         Date dd1=v.getDateDep();
         Date dd2=v.getDateDep();
         try {
-          String req = "INSERT INTO `vol` (`numVol`, `heureDep` ,`heureArr` , `dateDep`, `dateArr`, `dureeVol`, `idAvion`, `adresseDep`, `adresseArr`) VALUES ('" + v.getNumVol() + "', '" +v.getTimeDep() + "','" +v.getTimeArr()+ "','" +(dateFormat.format(dd1))  + "','" +(dateFormat.format(dd2)) + "','" +v.getDureeVol() + "','" +v.getidAvion()+ "','" +v.getAdrDep()+ "','" +v.getAdrArr() +"')" ;
+          String req = "INSERT INTO `vol` (`numVol`, `heureDep` ,`heureArr` , `dateDep`, `dateArr`, `dureeVol`, `idAvion`, `adresseDep`, `adresseArr`, `prix`, `aeoDep`, `aeoArr`) VALUES ('" + v.getNumVol() + "', '" +v.getTimeDep() + "','" +v.getTimeArr()+ "','" +(dateFormat.format(dd1))  + "','" +(dateFormat.format(dd2)) + "','" +v.getDureeVol() + "','" +v.getidAvion()+ "','" +v.getAdrDep()+ "','" +v.getAdrArr() +"','" +v.getPrix() +"','" +v.getAeoDep() +"','" +v.getAeoArr() +"')" ;
           //String req = "INSERT INTO `reclamation` (`nomC`, `description`,`dateRec`)"+" VALUES (?,?,?)";
              Statement st = cnx.createStatement();
             st.executeUpdate(req);
@@ -66,7 +66,7 @@ public class ServiceVol implements IServiceVol<Vol> {
     @Override
     public void modifierVol(Vol v)  {
         try {
-            String query = "UPDATE `vol` SET `numVol` = '" + v.getNumVol() + "', `heureDep` = '" + v.getTimeDep() + "' ,`heureArr` = '" + v.getTimeArr()+ "',`dateArr` = '" + v.getDateDep() + "',`dateDep` = '" +  v.getDateArr()+ "',`dureeVol` = '" +  v.getDureeVol()+ "',`idAvion` = '" +  v.getidAvion()+ "',`adresseDep` = '" +  v.getAdrDep()+ "',`adresseArr` = '" +  v.getAdrArr()+ "' WHERE `idVol` = " + v.getIdVol();
+            String query = "UPDATE `vol` SET `numVol` = '" + v.getNumVol() + "', `heureDep` = '" + v.getTimeDep() + "' ,`heureArr` = '" + v.getTimeArr()+ "',`dateArr` = '" + v.getDateDep() + "',`dateDep` = '" +  v.getDateArr()+ "',`dureeVol` = '" +  v.getDureeVol()+ "',`idAvion` = '" +  v.getidAvion()+ "',`adresseDep` = '" +  v.getAdrDep()+ "',`adresseArr` = '" +  v.getAdrArr()+ "',`prix` = '" +  v.getPrix()+ "',`aeoDep` = '" +  v.getAeoDep()+ "',`aeoArr` = '" +  v.getAeoArr()+ "' WHERE `idVol` = " + v.getIdVol();
             Statement st = cnx.createStatement();
             st.executeUpdate(query);
             System.out.println("vol updated !");
@@ -82,7 +82,7 @@ public class ServiceVol implements IServiceVol<Vol> {
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
-                Vol v = new Vol(rs.getInt(1), rs.getInt("numVol"),rs.getTime("heureDep"),rs.getTime("heureArr"),rs.getDate("dateArr"),rs.getDate("dateDep"), rs.getInt("dureeVol"), rs.getInt("idAvion"), rs.getString("adresseDep"), rs.getString("adresseArr"));
+                Vol v = new Vol(rs.getInt(1), rs.getInt("numVol"),rs.getTime("heureDep"),rs.getTime("heureArr"),rs.getDate("dateArr"),rs.getDate("dateDep"), rs.getInt("dureeVol"), rs.getInt("idAvion"), rs.getString("adresseDep"), rs.getString("adresseArr"), rs.getInt("prix"), rs.getString("aeoDep"), rs.getString("aeoArr"));
                 list.add(v);
             }
         } catch (SQLException ex) {
@@ -100,7 +100,7 @@ public class ServiceVol implements IServiceVol<Vol> {
             statement.setInt(1, idRec);
             ResultSet rs = statement.executeQuery();;
             while (rs.next()) {
-                v = new Vol(rs.getInt(1), rs.getInt("numVol"),rs.getTime("heureDep"),rs.getTime("heureArr"),rs.getDate("dateArr"),rs.getDate("dateDep"), rs.getInt("dureeVol"), rs.getInt("idAvion"),rs.getString("adresseDep"), rs.getString("adresseArr"));
+                v = new Vol(rs.getInt(1), rs.getInt("numVol"),rs.getTime("heureDep"),rs.getTime("heureArr"),rs.getDate("dateArr"),rs.getDate("dateDep"), rs.getInt("dureeVol"), rs.getInt("idAvion"),rs.getString("adresseDep"), rs.getString("adresseArr"), rs.getInt("prix"), rs.getString("aeoDep"), rs.getString("aeoArr"));
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -118,7 +118,7 @@ public class ServiceVol implements IServiceVol<Vol> {
            
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
-                Vol v = new Vol(rs.getInt(1), rs.getInt("numVol"),rs.getTime("heureDep"),rs.getTime("heureArr"),rs.getDate("dateArr"),rs.getDate("dateDep"), rs.getInt("dureeVol"), rs.getInt("idAvion"),rs.getString("adresseDep"), rs.getString("adresseArr"));
+                Vol v = new Vol(rs.getInt(1), rs.getInt("numVol"),rs.getTime("heureDep"),rs.getTime("heureArr"),rs.getDate("dateArr"),rs.getDate("dateDep"), rs.getInt("dureeVol"), rs.getInt("idAvion"),rs.getString("adresseDep"), rs.getString("adresseArr"), rs.getInt("prix"), rs.getString("aeoDep"), rs.getString("aeoArr"));
                  list.add(v);
             }
         } catch (SQLException ex) {

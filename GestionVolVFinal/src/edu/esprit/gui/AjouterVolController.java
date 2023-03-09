@@ -79,6 +79,12 @@ public class AjouterVolController implements Initializable {
     private Button btnlocArr;
     @FXML
     private TextField tfMapArr;
+    @FXML
+    private TextField tfPrix;
+    @FXML
+    private TextField tfAeoDep;
+    @FXML
+    private TextField tfAeoArr;
 
     /**
      * Initializes the controller class.
@@ -131,7 +137,11 @@ public class AjouterVolController implements Initializable {
         String  mapdep = tfMapDep.getText(); 
         String maparr = tfMapArr.getText(); 
         
+       int Prix =Integer.parseInt(tfPrix.getText());
        
+       
+       String  aeodep = tfAeoDep.getText(); 
+        String aeoarr = tfAeoArr.getText(); 
         
         ServiceVol se=new ServiceVol();
         ServiceAvion savion = new ServiceAvion();
@@ -139,7 +149,7 @@ public class AjouterVolController implements Initializable {
         avion = savion.getOneByName(combo);
 
         
-        Vol v=new Vol(NumVol,timedep,timeArr,dateRec1,dateRec2,DureeVol,avion.getIdAvion(),mapdep,maparr);
+        Vol v=new Vol(NumVol,timedep,timeArr,dateRec1,dateRec2,DureeVol,avion.getIdAvion(),mapdep,maparr,Prix,aeodep,aeoarr);
         
         
            if( (tfNumVol.getText().isEmpty())|| (tfDureeVol.getText().isEmpty())){

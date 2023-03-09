@@ -71,6 +71,12 @@ public class ModifierVolController implements Initializable {
     private TextField tfModifMapArr;
     @FXML
     private Button btnMapDep;
+    @FXML
+    private TextField tfprixmodif;
+    @FXML
+    private TextField editAeoDep;
+    @FXML
+    private TextField editAeoArr;
     /**
      * Initializes the controller class.
      * @param url
@@ -121,8 +127,12 @@ public class ModifierVolController implements Initializable {
        
     tfModifMapDep.setText(v.getAdrDep());
          tfModifMapArr.setText(v.getAdrArr());
+         
+         
+         tfprixmodif.setText(String.valueOf(v.getPrix()));
 
-        
+        editAeoDep.setText(v.getAeoDep());
+         editAeoArr.setText(v.getAeoArr());
         
     }    
 
@@ -155,8 +165,14 @@ public class ModifierVolController implements Initializable {
         
          int Result =dateRec1.compareTo(dateRec2);
          int result = timedep1.compareTo(timeArr1);
+         
+          int Prix =Integer.parseInt(tfprixmodif.getText());
+          
+          String aeoDep = editAeoDep.getText();
         
-        Vol vol=new Vol(v.getIdVol(),numVol,timedep1,timeArr1,dateRec1,dateRec2,dureeVol,avion.getIdAvion(),MapDep,MapArr);
+         String aeoArr = editAeoArr.getText();
+        
+        Vol vol=new Vol(v.getIdVol(),numVol,timedep1,timeArr1,dateRec1,dateRec2,dureeVol,avion.getIdAvion(),MapDep,MapArr,Prix,aeoDep,aeoArr);
         
         
           if((editDureeVol.getText().isEmpty()) || (editNunVol.getText().isEmpty())){

@@ -28,6 +28,36 @@ public class Vol {
     public Time timeArr;
     public String adrDep;
      public String adrArr;
+     public int prix;
+     
+     public String aeoDep;
+     public String aeoArr;
+
+    public String getAeoDep() {
+        return aeoDep;
+    }
+
+    public String getAeoArr() {
+        return aeoArr;
+    }
+
+    public void setAeoDep(String aeoDep) {
+        this.aeoDep = aeoDep;
+    }
+
+    public void setAeoArr(String aeoArr) {
+        this.aeoArr = aeoArr;
+    }
+     
+
+    public int getPrix() {
+        return prix;
+    }
+
+    public void setPrix(int prix) {
+        this.prix = prix;
+    }
+    
 
     public String getAdrDep() {
         return adrDep;
@@ -70,7 +100,7 @@ public class Vol {
    
 
     
-    public Vol(int idVol, int numVol, Time timeDep,Time timeArr, Date dateDep, Date dateArr, int dureeVol, int idAvion,String adrDep,String adrArr) {
+    public Vol(int idVol, int numVol, Time timeDep,Time timeArr, Date dateDep, Date dateArr, int dureeVol, int idAvion,String adrDep,String adrArr,int prix,String aeoDep,String aeoArr) {
         this.idVol = idVol;
         this.numVol = numVol;
         this.timeDep = timeDep;
@@ -81,10 +111,14 @@ public class Vol {
         this.idAvion = idAvion;
          this.adrDep = adrDep;
           this.adrArr = adrArr;
+          this.prix = prix;
+          
+          this.aeoDep = aeoDep;
+          this.aeoArr = aeoArr;
        
     }
 
-    public Vol(int numVol, Time timeDep,Time timeArr, Date dateDep, Date dateArr, int dureeVol, int idAvion,String adrDep,String adrArr) {
+    public Vol(int numVol, Time timeDep,Time timeArr, Date dateDep, Date dateArr, int dureeVol, int idAvion,String adrDep,String adrArr,int prix,String aeoDep,String aeoArr) {
         this.numVol = numVol;
         this.timeDep = timeDep;
          this.timeArr = timeArr;
@@ -94,6 +128,10 @@ public class Vol {
         this.idAvion = idAvion;
         this.adrDep = adrDep;
           this.adrArr = adrArr;
+          this.prix = prix;
+          
+          this.aeoDep = aeoDep;
+          this.aeoArr = aeoArr;
     }
 
     public void setTimeDep(Time timeDep) {

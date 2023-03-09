@@ -4,19 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/ghassen/Desktop/voleco-pidev3A14/GestionVolVFinal/src/edu/esprit/services/ServiceVol.java</file>
+            <file>file:/C:/Users/ghassen/Desktop/voleco-pidev3A14/GestionVolVFinal/src/edu/esprit/gui/VolItemController.java</file>
             <file>file:/C:/Users/ghassen/Desktop/voleco-pidev3A14/GestionVolVFinal/src/edu/esprit/entities/Vol.java</file>
             <file>file:/C:/Users/ghassen/Desktop/voleco-pidev3A14/GestionVolVFinal/src/edu/esprit/gui/ModifierVolController.java</file>
-            <file>file:/C:/Users/ghassen/Desktop/voleco-pidev3A14/GestionVolVFinal/src/edu/esprit/gui/WeatherManager.java</file>
-            <file>file:/C:/Users/ghassen/Desktop/voleco-pidev3A14/GestionVolVFinal/src/edu/esprit/gui/map.html</file>
-            <file>file:/C:/Users/ghassen/Desktop/voleco-pidev3A14/GestionVolVFinal/src/edu/esprit/gui/VolItemController.java</file>
-            <file>file:/C:/Users/ghassen/Desktop/voleco-pidev3A14/GestionVolVFinal/src/edu/esprit/gui/Controller.java</file>
-            <file>file:/C:/Users/ghassen/Desktop/voleco-pidev3A14/GestionVolVFinal/src/edu/esprit/gui/weather.fxml</file>
-            <file>file:/C:/Users/ghassen/Desktop/voleco-pidev3A14/GestionVolVFinal/src/edu/esprit/gui/WebViewCaptureMap.java</file>
             <file>file:/C:/Users/ghassen/Desktop/voleco-pidev3A14/GestionVolVFinal/src/edu/esprit/gui/AfficherVolController.java</file>
-            <file>file:/C:/Users/ghassen/Desktop/voleco-pidev3A14/GestionVolVFinal/src/edu/esprit/test/FXMain.java</file>
-            <file>file:/C:/Users/ghassen/Desktop/voleco-pidev3A14/GestionVolVFinal/src/edu/esprit/test/NewMain.java</file>
             <file>file:/C:/Users/ghassen/Desktop/voleco-pidev3A14/GestionVolVFinal/src/edu/esprit/gui/AjouterVolController.java</file>
-            <file>file:/C:/Users/ghassen/Desktop/voleco-pidev3A14/GestionVolVFinal/src/edu/esprit/gui/ImageHandler.java</file>
         </group>
     </open-files>
 </project-private>
