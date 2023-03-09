@@ -24,12 +24,12 @@
             </Label>
             <Label layoutX="251.0" layoutY="159.0" text="/5">
                <font>
-                  <Font size="39.0" />
+                  <Font size="40.0" />
                </font>
             </Label>
-            <Label fx:id="notreat" layoutX="197.0" layoutY="134.0" text="5">
+            <Label fx:id="notreat" layoutX="93.0" layoutY="183.0" text="5">
                <font>
-                  <Font name="System Bold Italic" size="73.0" />
+                  <Font name="System Bold Italic" size="40.0" />
                </font>
             </Label>
             <HBox layoutX="8.0" layoutY="230.0" prefHeight="32.0" prefWidth="515.0" style="-fx-background-color: #0063ff; -fx-background-radius: 50 50 0 0;">
@@ -41,7 +41,7 @@
                   </Label>
                </children>
             </HBox>
-            <ImageView fx:id="imgqrcode" fitHeight="44.0" fitWidth="51.0" layoutX="136.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgqrcode" fitHeight="44.0" fitWidth="51.0" layoutX="332.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../../Downloads/gererProfil/gererProfil/src/assest/clipart1753277.png" />
                </image>
@@ -87,5 +87,6 @@
          </children>
       </Pane>
       <ListView fx:id="listcom" layoutX="777.0" layoutY="285.0" prefHeight="462.0" prefWidth="513.0" style="-fx-background-radius: 0 0 20 20;" />
+      <Button fx:id="bouttonretour" layoutX="292.0" layoutY="724.0" mnemonicParsing="false" onAction="#retouraction" prefHeight="31.0" prefWidth="164.0" text="Retour" textFill="#2262c6" />
    </children>
 </AnchorPane>

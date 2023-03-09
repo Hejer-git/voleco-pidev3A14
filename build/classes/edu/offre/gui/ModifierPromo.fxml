@@ -180,11 +180,12 @@
       <Label layoutX="366.0" layoutY="234.0" text="Reduction" textFill="#2262c6" />
       <TextField fx:id="tfCodeP" layoutX="554.0" layoutY="176.0" />
       <TextField fx:id="tfR" layoutX="554.0" layoutY="229.0" />
-      <Button fx:id="bouttonmodif" layoutX="805.0" layoutY="207.0" mnemonicParsing="false" onAction="#modifieraction" text="Modifier" textFill="#2262c6" />
+      <Button fx:id="bouttonmodif" layoutX="796.0" layoutY="176.0" mnemonicParsing="false" onAction="#modifieraction" text="Modifier" textFill="#2262c6" />
       <Label layoutX="460.0" layoutY="99.0" prefHeight="30.0" prefWidth="254.0" text="Modifier une Promotion" textFill="#a2bee8">
          <font>
             <Font name="Cambria" size="24.0" />
          </font>
       </Label>
+      <Button fx:id="bouttonretour" layoutX="796.0" layoutY="229.0" mnemonicParsing="false" onAction="#retouraction" prefHeight="31.0" prefWidth="77.0" text="Retour" textFill="#2262c6" />
    </children>
 </AnchorPane>

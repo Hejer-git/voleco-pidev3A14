@@ -3,15 +3,25 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/edu/offre/entities/Promo.java</file>
             <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/edu/offre/services/ServiceOffre.java</file>
-            <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/edu/offre/gui/OffreItem.fxml</file>
-            <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/edu/offre/services/IOffre.java</file>
             <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/edu/offre/gui/AfficherOffreController.java</file>
-            <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/edu/offre/gui/OffreItemController.java</file>
-            <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/edu/offre/entities/Offre.java</file>
+            <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/edu/offre/gui/AfficherOffre.fxml</file>
+            <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/api/SMS.java</file>
+            <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/edu/offre/gui/AjouterOffreController.java</file>
+            <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/edu/offre/gui/SmsController.java</file>
+            <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/edu/offre/gui/ModifierOffreController.java</file>
+            <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/edu/offre/gui/evalueroffre.css</file>
+            <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/views/ReatingController.java</file>
+            <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/api/SMSKite.java</file>
+            <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/edu/offre/gui/EvaluerOffre.fxml</file>
+            <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/edu/offre/services/IPromo.java</file>
+            <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/edu/offre/gui/ModifierPromoController.java</file>
+            <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/edu/offre/gui/ajouteroffre.css</file>
+            <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/edu/offre/gui/EvaluerOffreController.java</file>
             <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/edu/offre/tests/FXMain.java</file>
+            <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/edu/offre/services/ServicePromo.java</file>
             <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/edu/offre/tests/MainClass.java</file>
+            <file>file:/C:/Users/21629/Documents/NetBeansProjects/offre/src/edu/offre/gui/AfficherPromoController.java</file>
         </group>
     </open-files>
 </project-private>

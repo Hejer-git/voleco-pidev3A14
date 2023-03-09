@@ -51,6 +51,8 @@ public class ModifierOffreController implements Initializable {
     private Button bouttonmodif;
     @FXML
     private TextField tfpromo;
+    @FXML
+    private Button bouttonretour;
 
     /**
      * Initializes the controller class.
@@ -72,6 +74,7 @@ public class ModifierOffreController implements Initializable {
             }   
    
 
+    @FXML
     private void retouraction(ActionEvent event) throws IOException {
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("AfficherOffre.fxml"));
         Scene tabbleViewScene = new Scene(tableViewParent);

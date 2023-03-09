@@ -197,5 +197,6 @@
       </Label>
       <TextField fx:id="tfpromo" layoutX="554.0" layoutY="468.0" />
       <Label layoutX="366.0" layoutY="468.0" text="Id Promo" textFill="#2262c6" />
+      <Button fx:id="bouttonretour" layoutX="796.0" layoutY="338.0" mnemonicParsing="false" onAction="#retouraction" prefHeight="31.0" prefWidth="77.0" text="Retour" textFill="#2262c6" />
    </children>
 </AnchorPane>

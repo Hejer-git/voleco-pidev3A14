@@ -18,11 +18,19 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.ToggleGroup;
 import edu.offre.utils.DataSource;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -51,6 +59,10 @@ public class EvaluerOffreController implements Initializable {
     @FXML
     private ListView<String> listcom;
     String notte;
+    @FXML
+    private ImageView imgqrcode;
+    @FXML
+    private Button bouttonretour;
 
     /**
      * Initializes the controller class.
@@ -106,8 +118,10 @@ public class EvaluerOffreController implements Initializable {
 		}
     }
     
-    int note=0;
-    int cmpt=0;
+    float note=0;
+    float cmpt=0;
+    String chaine1= String.format("%.2f",note);
+    String chaine2= String.format("%.2f",cmpt);
     
         @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -163,6 +177,15 @@ Statement st = cnx.createStatement();
 		}
                   
         
+    }
+
+    @FXML
+    private void retouraction(ActionEvent event) throws IOException {
+            Parent tableViewParent = FXMLLoader.load(getClass().getResource("AfficherOffre.fxml"));
+        Scene tabbleViewScene = new Scene(tableViewParent);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(tabbleViewScene);
+        window.show();
     }
     
 }

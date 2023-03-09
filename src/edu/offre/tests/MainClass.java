@@ -38,9 +38,7 @@ public class MainClass {
       
 
         //Offre o2 = new Offre("offre2",d3,d4,"Maroc","offre pour amis",1000);
-        
-  //      ServiceOffre so = new ServiceOffre();
-        
+            
          //so.ajouteroffre(o1);
          //so.ajouteroffre(o2);
          // so.supprimeroffre(16);
@@ -49,10 +47,11 @@ public class MainClass {
       ServicePromo sp = new ServicePromo();
          //sp.ajouterpromo(p1);
       sp.supprimerpromo(p1);*/
- /*   ServicePromo sp = new ServicePromo();
-    Promo p = sp.getOneById(6,15);
-    int prix=so.getOneById(15).getPrixOffre();
-    float red = p .getReduction();
+  /*  ServiceOffre so = new ServiceOffre();
+   ServicePromo sp = new ServicePromo();
+    Promo p = sp.getOneById(6,39);
+    int prix=so.getOneById().getPrixOffre();
+    float red = p.getReduction();
          System.out.println(prix-(red/100*prix));*/
     }
 } 

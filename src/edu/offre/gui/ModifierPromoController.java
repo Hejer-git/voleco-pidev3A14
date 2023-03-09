@@ -37,6 +37,8 @@ public class ModifierPromoController implements Initializable {
     private TextField tfR;
     @FXML
     private Button bouttonmodif;
+    @FXML
+    private Button bouttonretour;
 
     /**
      * Initializes the controller class.
@@ -62,6 +64,15 @@ public class ModifierPromoController implements Initializable {
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(tabbleViewScene);
             window.show();
+    }
+
+    @FXML
+    private void retouraction(ActionEvent event) throws IOException {
+             Parent tableViewParent = FXMLLoader.load(getClass().getResource("AfficherPromo.fxml"));
+        Scene tabbleViewScene = new Scene(tableViewParent);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(tabbleViewScene);
+        window.show();
     }
     
 }

@@ -10,19 +10,20 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import java.io.IOException;
  
 /**
  *
  * @author 21629
  */
-import java.io.IOException;
+
 public class FXMain extends Application {
     
    @Override
     public void start(Stage primaryStage) throws IOException {
         try {
         
-                Parent root = FXMLLoader.load(getClass().getResource("../gui/AjouterOffre.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("../gui/AjouterPromo.fxml"));
                 
                 Scene scene = new Scene(root);
                 primaryStage.setScene(scene);

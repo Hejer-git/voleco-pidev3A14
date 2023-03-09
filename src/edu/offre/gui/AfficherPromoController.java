@@ -5,6 +5,8 @@
  */
 package edu.offre.gui;
 
+import static com.google.common.collect.Iterables.size;
+import static com.google.common.collect.Iterators.size;
 import edu.offre.entities.Promo;
 import edu.offre.services.ServiceOffre;
 import edu.offre.services.ServicePromo;
@@ -21,6 +23,27 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import java.awt.Desktop;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.net.URL;
+import javax.imageio.ImageIO;
+import com.google.zxing.*;
+import com.google.zxing.common.*;
+import com.google.zxing.qrcode.*;
+import com.google.zxing.qrcode.QRCodeReader;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.EncodeHintType;
+import com.google.zxing.qrcode.QRCodeWriter;
+import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
+import com.google.zxing.qrcode.encoder.Encoder;
+import com.google.zxing.qrcode.encoder.QRCode;
+import java.awt.Color;
+import java.awt.Graphics2D;
+import static java.awt.SystemColor.text;
+import static java.nio.file.Files.size;
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.image.ImageView;
 
 /**
  * FXML Controller class
@@ -34,10 +57,15 @@ public class AfficherPromoController implements Initializable {
     @FXML
     private Label label;
     private List<Promo> promos = new ArrayList<>();
-
+Promo p ;
+    @FXML
+    private ImageView imgqrcode;
     /**
      * Initializes the controller class.
      */
+    
+    
+  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         int row = 0;
@@ -63,8 +91,23 @@ public class AfficherPromoController implements Initializable {
             } catch (IOException ex) {
                 Logger.getLogger(AfficherOffreController.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
+            
+            
+            
+            
+            
         }
-    }    
-    }    
+        
+       
+    }
     
+        
+
+}
+   
+
+    
+
+
 

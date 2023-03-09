@@ -50,15 +50,16 @@ public class AfficherOffreController implements Initializable {
     @FXML
     private TextField tfrecherche;
     @FXML
-    private Button btnrecherche;
-    @FXML
     private ComboBox<String> cbdesasc;
+    
+  
+    @FXML
+    private Button recherche;
     @FXML
     private Button btntrier;
-    
-   public  ObservableList<String> options = FXCollections.observableArrayList(
-        "ASC", "DESC"
-    );
+    public  ObservableList<String> options= FXCollections.observableArrayList(
+        "ASC", "DESC" );
+
     
     
     private void handleButtonAction(ActionEvent event) {
@@ -66,7 +67,9 @@ public class AfficherOffreController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         cbdesasc.getSelectionModel().selectFirst();
+        
         for (int i = 0; i  < options.size(); i++)
         {
          cbdesasc.getItems().add(options.get(i));
@@ -142,9 +145,6 @@ public class AfficherOffreController implements Initializable {
     }
 
 
-    @FXML
-    private void cbdesasc(ActionEvent event) {
-    }
 
     @FXML
     private void btntrier(ActionEvent event) {
@@ -182,6 +182,15 @@ public class AfficherOffreController implements Initializable {
         }
         
     }
+
+    @FXML
+    private void cbdesasc(ActionEvent event) {
+    }
+
+   
+    
+
+    
     
 }
 

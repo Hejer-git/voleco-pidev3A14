@@ -6,12 +6,21 @@
 package edu.offre.services;
 import edu.offre.entities.Promo; 
 import edu.offre.utils.DataSource;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 /**
  *
@@ -33,7 +42,9 @@ public class ServicePromo implements IPromo<Promo>{
              System.out.println("Promo created !");
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
+            
         }
+         
     }
  @Override
    public void supprimerpromo(Promo p) {
@@ -96,11 +107,4 @@ public class ServicePromo implements IPromo<Promo>{
             System.out.println(ex.getMessage());
         }
     }
-        
-
-    
-
-   
-
-
 }
