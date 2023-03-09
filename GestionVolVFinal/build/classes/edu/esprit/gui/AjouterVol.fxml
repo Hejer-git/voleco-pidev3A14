@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXTimePicker?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
@@ -13,9 +14,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="919.0" styleClass="home-back" stylesheets="@gestionavion.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.AjouterVolController">
+<AnchorPane id="AnchorPane" prefHeight="775.0" prefWidth="1172.0" styleClass="home-back" stylesheets="@gestionavion.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.AjouterVolController">
     <children>
-      <AnchorPane layoutX="-1.0" layoutY="74.0" prefHeight="506.0" prefWidth="240.0" styleClass="sidebar">
+      <AnchorPane layoutY="75.0" prefHeight="660.0" prefWidth="241.0" styleClass="sidebar">
          <children>
             <Pane layoutX="30.0" layoutY="37.0" prefHeight="30.0" prefWidth="180.0" styleClass="labbtn">
                <children>
@@ -183,22 +184,26 @@
             <Image url="@../images/icons8_slider_50px.png" />
          </image>
       </ImageView>
-      <Label layoutX="253.0" layoutY="157.0" prefHeight="21.0" prefWidth="65.0" text="NumVol" />
-      <Label layoutX="253.0" layoutY="239.0" prefHeight="21.0" prefWidth="77.0" text="HeureDep" />
-      <Label layoutX="249.0" layoutY="343.0" prefHeight="21.0" prefWidth="65.0" text="DateDep" />
-      <Label layoutX="585.0" layoutY="239.0" prefHeight="21.0" prefWidth="65.0" text="HeureArr" />
-      <Label layoutX="585.0" layoutY="157.0" prefHeight="21.0" prefWidth="65.0" text="DureeVol" />
-      <TextField fx:id="tfNumVol" layoutX="356.0" layoutY="152.0" />
-      <TextField fx:id="tfDureeVol" layoutX="678.0" layoutY="152.0" />
-      <TextField fx:id="tfHeureDep" layoutX="356.0" layoutY="234.0" />
-      <TextField fx:id="tfHeureArr" layoutX="678.0" layoutY="234.0" />
-      <DatePicker fx:id="tfDateDep" layoutX="340.0" layoutY="338.0" />
-      <Button fx:id="ValiderVol" layoutX="304.0" layoutY="451.0" mnemonicParsing="false" onAction="#btnAjouterVol" prefHeight="31.0" prefWidth="89.0" text="Valider" />
-      <Button layoutX="460.0" layoutY="451.0" mnemonicParsing="false" onAction="#btnretour" prefHeight="31.0" prefWidth="89.0" text="Retour" />
-      <DatePicker fx:id="tfdateArr" layoutX="678.0" layoutY="338.0" />
-      <Label layoutX="593.0" layoutY="343.0" prefHeight="21.0" prefWidth="57.0" text="DateArr" />
-      <ComboBox fx:id="comborole" layoutX="678.0" layoutY="410.0" prefHeight="31.0" prefWidth="218.0" />
-      <Label layoutX="593.0" layoutY="415.0" prefHeight="21.0" prefWidth="65.0" text="idAvion" />
+      <Label layoutX="275.0" layoutY="157.0" prefHeight="21.0" prefWidth="65.0" text="NumVol" />
+      <Label layoutX="263.0" layoutY="260.0" prefHeight="21.0" prefWidth="77.0" text="HeureDep" />
+      <Label layoutX="269.0" layoutY="349.0" prefHeight="21.0" prefWidth="65.0" text="DateDep" />
+      <Label layoutX="741.0" layoutY="260.0" prefHeight="21.0" prefWidth="65.0" text="HeureArr" />
+      <Label layoutX="741.0" layoutY="157.0" prefHeight="21.0" prefWidth="65.0" text="DureeVol" />
+      <TextField fx:id="tfNumVol" layoutX="383.0" layoutY="152.0" prefHeight="31.0" prefWidth="205.0" />
+      <TextField fx:id="tfDureeVol" layoutX="864.0" layoutY="152.0" prefHeight="31.0" prefWidth="205.0" />
+      <DatePicker fx:id="tfDateDep" layoutX="387.0" layoutY="349.0" prefHeight="31.0" prefWidth="205.0" />
+      <Button fx:id="ValiderVol" layoutX="551.0" layoutY="690.0" mnemonicParsing="false" onAction="#btnAjouterVol" prefHeight="31.0" prefWidth="106.0" text="Valider" />
+      <Button layoutX="706.0" layoutY="690.0" mnemonicParsing="false" onAction="#btnretour" prefHeight="31.0" prefWidth="106.0" text="Retour" />
+      <DatePicker fx:id="tfdateArr" layoutX="864.0" layoutY="349.0" prefHeight="31.0" prefWidth="205.0" />
+      <Label layoutX="745.0" layoutY="359.0" prefHeight="21.0" prefWidth="57.0" text="DateArr" />
+      <ComboBox fx:id="comborole" layoutX="867.0" layoutY="458.0" prefHeight="31.0" prefWidth="205.0" />
+      <Label layoutX="741.0" layoutY="463.0" prefHeight="21.0" prefWidth="65.0" text="idAvion" />
+      <JFXTimePicker fx:id="tfHeureDep1" layoutX="382.0" layoutY="255.0" prefHeight="31.0" prefWidth="205.0" />
+      <JFXTimePicker fx:id="tfHeureArr1" layoutX="864.0" layoutY="250.0" prefHeight="31.0" prefWidth="205.0" />
+      <TextField fx:id="tfMapDep" layoutX="390.0" layoutY="458.0" prefHeight="31.0" prefWidth="205.0" />
+      <Button fx:id="btnlocDep" layoutX="255.0" layoutY="458.0" mnemonicParsing="false" onAction="#btnlocaliserDep" prefHeight="31.0" prefWidth="106.0" text="Depart" />
+      <Button fx:id="btnlocArr" layoutX="255.0" layoutY="547.0" mnemonicParsing="false" onAction="#btnlocaliserArr" prefHeight="31.0" prefWidth="106.0" text="Destination" />
+      <TextField fx:id="tfMapArr" layoutX="390.0" layoutY="547.0" prefHeight="31.0" prefWidth="205.0" />
    </children>
     
 </AnchorPane>

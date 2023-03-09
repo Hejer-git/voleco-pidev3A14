@@ -8,48 +8,45 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="64.0" prefWidth="598.0" stylesheets="@gestionavion.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.AvionItemController">
+<AnchorPane id="AnchorPane" prefHeight="64.0" prefWidth="644.0" stylesheets="@gestionavion.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.AvionItemController">
    <children>
-      <HBox layoutX="28.0" layoutY="9.0" prefHeight="45.0" prefWidth="566.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10px;" styleClass="card-user" stylesheets="@gestionavion.css">
+      <HBox layoutX="28.0" layoutY="9.0" prefHeight="45.0" prefWidth="625.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10px;" styleClass="card-user" stylesheets="@gestionavion.css">
          <children>
             <Label fx:id="idlabel" textFill="WHITE" />
-            <Label fx:id="NomAvionlabel" alignment="CENTER" prefHeight="51.0" prefWidth="82.0" text="NomAvion" textAlignment="CENTER">
+            <Label fx:id="NomAvionlabel" alignment="CENTER" prefHeight="45.0" prefWidth="76.0" text="NomAvion" textAlignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="NbPlacelabel" alignment="CENTER" prefHeight="51.0" prefWidth="82.0" text="NbPlace" textAlignment="CENTER">
+            <Label fx:id="NbPlacelabel" alignment="CENTER" prefHeight="45.0" prefWidth="83.0" text="NbPlace" textAlignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="Classelabel" alignment="CENTER" prefHeight="51.0" prefWidth="82.0" text="Classe" textAlignment="CENTER">
+            <Label fx:id="Classelabel" alignment="CENTER" prefHeight="45.0" prefWidth="79.0" text="Classe" textAlignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="Modelelabel" alignment="CENTER" prefHeight="51.0" prefWidth="82.0" text="Modele" textAlignment="CENTER">
+            <Label fx:id="Modelelabel" alignment="CENTER" prefHeight="45.0" prefWidth="80.0" text="Modele" textAlignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="Datelabel" alignment="CENTER" prefHeight="45.0" prefWidth="94.0" text="DateEntServ" textAlignment="CENTER">
+            <Label fx:id="Datelabel" alignment="CENTER" prefHeight="45.0" prefWidth="115.0" text="DateEntServ" textAlignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#btnModifier" onMousePressed="#editpressed" prefHeight="25.0" prefWidth="65.0" text="Modifier">
+            <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#btnModifier" onMousePressed="#editpressed" prefHeight="31.0" prefWidth="84.0" text="Modifier">
                <HBox.margin>
                   <Insets right="5.0" top="10.0" />
                </HBox.margin>
             </Button>
-            <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#btnSupprimer" prefHeight="25.0" prefWidth="62.0" text="Supprimer">
+            <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#btnSupprimer" onMousePressed="#editpressed" prefHeight="31.0" prefWidth="90.0" text="Supprimer">
                <HBox.margin>
-                  <Insets top="10.0" />
+                  <Insets right="5.0" top="10.0" />
                </HBox.margin>
-               <font>
-                  <Font size="10.0" />
-               </font>
             </Button>
          </children></HBox>
       <Line endX="14.0" endY="12.0" layoutX="14.0" layoutY="38.0" startX="14.0" startY="-25.0" stroke="#4514cd" strokeWidth="7.0" />

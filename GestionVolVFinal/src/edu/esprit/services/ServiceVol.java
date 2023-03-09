@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package edu.esprit.services;
+import java.sql.Time;
 import edu.esprit.entities.Avion;
 import edu.esprit.entities.Vol;
 import edu.esprit.utils.DataSource;
@@ -14,10 +16,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -33,7 +38,7 @@ public class ServiceVol implements IServiceVol<Vol> {
         Date dd1=v.getDateDep();
         Date dd2=v.getDateDep();
         try {
-          String req = "INSERT INTO `vol` (`numVol`, `heureDep` ,`heureArr` , `dateDep`, `dateArr`, `dureeVol`, `idAvion`) VALUES ('" + v.getNumVol() + "', '" +v.getHeureDep() + "','" +v.getHeureArr()+ "','" +(dateFormat.format(dd1))  + "','" +(dateFormat.format(dd2)) + "','" +v.getDureeVol() + "','" +v.getidAvion() +"')" ;
+          String req = "INSERT INTO `vol` (`numVol`, `heureDep` ,`heureArr` , `dateDep`, `dateArr`, `dureeVol`, `idAvion`, `adresseDep`, `adresseArr`) VALUES ('" + v.getNumVol() + "', '" +v.getTimeDep() + "','" +v.getTimeArr()+ "','" +(dateFormat.format(dd1))  + "','" +(dateFormat.format(dd2)) + "','" +v.getDureeVol() + "','" +v.getidAvion()+ "','" +v.getAdrDep()+ "','" +v.getAdrArr() +"')" ;
           //String req = "INSERT INTO `reclamation` (`nomC`, `description`,`dateRec`)"+" VALUES (?,?,?)";
              Statement st = cnx.createStatement();
             st.executeUpdate(req);
@@ -61,7 +66,7 @@ public class ServiceVol implements IServiceVol<Vol> {
     @Override
     public void modifierVol(Vol v)  {
         try {
-            String query = "UPDATE `vol` SET `numVol` = '" + v.getNumVol() + "', `heureDep` = '" + v.getHeureDep() + "' ,`heureArr` = '" + v.getHeureArr()+ "',`dateArr` = '" + v.getDateDep() + "',`dateDep` = '" +  v.getDateArr()+ "',`dureeVol` = '" +  v.getDureeVol()+ "',`idAvion` = '" +  v.getidAvion()+ "' WHERE `idVol` = " + v.getIdVol();
+            String query = "UPDATE `vol` SET `numVol` = '" + v.getNumVol() + "', `heureDep` = '" + v.getTimeDep() + "' ,`heureArr` = '" + v.getTimeArr()+ "',`dateArr` = '" + v.getDateDep() + "',`dateDep` = '" +  v.getDateArr()+ "',`dureeVol` = '" +  v.getDureeVol()+ "',`idAvion` = '" +  v.getidAvion()+ "',`adresseDep` = '" +  v.getAdrDep()+ "',`adresseArr` = '" +  v.getAdrArr()+ "' WHERE `idVol` = " + v.getIdVol();
             Statement st = cnx.createStatement();
             st.executeUpdate(query);
             System.out.println("vol updated !");
@@ -77,7 +82,7 @@ public class ServiceVol implements IServiceVol<Vol> {
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
-                Vol v = new Vol(rs.getInt(1), rs.getInt("numVol"),rs.getString("heureDep"), rs.getString("heureArr"),rs.getDate("dateArr"),rs.getDate("dateDep"), rs.getInt("dureeVol"), rs.getInt("idAvion"));
+                Vol v = new Vol(rs.getInt(1), rs.getInt("numVol"),rs.getTime("heureDep"),rs.getTime("heureArr"),rs.getDate("dateArr"),rs.getDate("dateDep"), rs.getInt("dureeVol"), rs.getInt("idAvion"), rs.getString("adresseDep"), rs.getString("adresseArr"));
                 list.add(v);
             }
         } catch (SQLException ex) {
@@ -90,17 +95,51 @@ public class ServiceVol implements IServiceVol<Vol> {
     public Vol getOneById(int idRec) {
         Vol v = null;
         try {
-            String req = "Select * from vol";
-            Statement st = cnx.createStatement();
-            ResultSet rs = st.executeQuery(req);
+            String req = " SELECT * FROM vol WHERE idVol = ? ";
+            PreparedStatement statement = cnx.prepareStatement(req);
+            statement.setInt(1, idRec);
+            ResultSet rs = statement.executeQuery();;
             while (rs.next()) {
-                v = new Vol(rs.getInt(1), rs.getInt("numVol"),rs.getString("heureDep"), rs.getString("heureArr"),rs.getDate("dateArr"),rs.getDate("dateDep"), rs.getInt("dureeVol"), rs.getInt("idAvion"));
+                v = new Vol(rs.getInt(1), rs.getInt("numVol"),rs.getTime("heureDep"),rs.getTime("heureArr"),rs.getDate("dateArr"),rs.getDate("dateDep"), rs.getInt("dureeVol"), rs.getInt("idAvion"),rs.getString("adresseDep"), rs.getString("adresseArr"));
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
 
         return v;
+    }
+
+    public List<Vol> recherche(String numvol) {
+        List<Vol> list = new ArrayList<>();
+       
+        try {
+            String req = " Select * from vol ";
+            PreparedStatement statement = cnx.prepareStatement(req);
+           
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                Vol v = new Vol(rs.getInt(1), rs.getInt("numVol"),rs.getTime("heureDep"),rs.getTime("heureArr"),rs.getDate("dateArr"),rs.getDate("dateDep"), rs.getInt("dureeVol"), rs.getInt("idAvion"),rs.getString("adresseDep"), rs.getString("adresseArr"));
+                 list.add(v);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        list=list.stream().filter(e -> String.valueOf(e.getNumVol()).contains(numvol)).collect(Collectors.toList());
+
+        return list;
+    }
+    
+     public List<Vol> Trie(String sortOrder , List<Vol> list) {
+     Comparator<Vol> volComparator = Comparator.comparingInt(Vol::getNumVol);
+       if(sortOrder=="ASC"){         
+           list= list.stream().sorted((e1,e2)->e1.getNumVol()-e2.getNumVol()).collect(Collectors.toList());
+        }else{     list = list.stream().sorted(volComparator.reversed()) .collect(Collectors.toList());
+        }
+  
+           
+               
+        return list;
     }
    /* public List<Reclamation> afficherRec() {
 
