@@ -5,6 +5,7 @@
  */
 package edu.reclamation.services;
 
+import edu.reclamation.entities.TypeReclamation;
 import java.util.List;
 /**
  *
@@ -16,7 +17,10 @@ public interface IServiceType <T> {
     public void modifierTypeRec(T t);
     public List<T> getAll();
     public T getOneById(int idTR);
-    public int getIdt(String c);
+    //public int getIdt(String c);
+     public T getOneByName(String nom);
+     public T readBytype(String ty);
+  
 }
 
 

@@ -12,24 +12,32 @@ import java.util.Objects;
  */
 public class Reclamation {
     private int idRec,type;
-    private String nomC, description;
+    private String nomC, description,typer,image;
     private Date dateRec;
 
 public Reclamation(){}
 
-    public Reclamation(String nomC, String description, Date dateRec,int type) {
+    public Reclamation(String nomC, String description, Date dateRec,int type,String image) {
         this.nomC = nomC;
         this.description = description;
         this.dateRec = dateRec;
         this.type = type;
+        this.image=image;
+    }
+     public Reclamation(String nomC, String description,int type,String image) {
+        this.nomC = nomC;
+        this.description = description;
+       this.image=image;
+        this.type = type;
     }
 
-    public Reclamation(int idRec, String nomC, String description, Date dateRec,int type) {
+    public Reclamation(int idRec, String nomC, String description, Date dateRec,int type,String image) {
         this.idRec = idRec;
         this.nomC = nomC;
         this.description = description;
         this.dateRec = dateRec;
         this.type = type;
+        this.image=image;
     }
 
  
@@ -39,6 +47,14 @@ public Reclamation(){}
 
     public void setIdRec(int idRec) {
         this.idRec = idRec;
+    }
+    
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image=image;
     }
 
     public String getNomC() {
@@ -71,9 +87,16 @@ public Reclamation(){}
     public void setType(int type) {
         this.type = type;
     }
+     public String gettype() {
+        return typer;
+    }
+
+    public void settype(String typer) {
+        this.typer = typer;
+    }
     @Override
     public String toString() {
-        return "Reclamation{" + "nomC=" + nomC + ", description=" + description + ", dateRec=" + dateRec +", type=" + type + '}';
+        return "Reclamation{" + "nomC=" + nomC + ", description=" + description + ", dateRec=" + dateRec +", type=" + type +", image=" + image + '}';
     }
 
      @Override

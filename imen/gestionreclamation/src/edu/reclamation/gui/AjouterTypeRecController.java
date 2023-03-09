@@ -68,15 +68,16 @@ public class AjouterTypeRecController implements Initializable {
 
     @FXML
     private void ajoutrec(ActionEvent event) throws IOException {
-        
-            if((tftype.getText().equals("")) ){
+        String typeRec=tftype.getText();
+            if((typeRec.isEmpty() )){
     Alert alert =new Alert(Alert.AlertType.ERROR);
     alert.setContentText("Remplissez tt les champs");   
     alert.showAndWait();
+    return;
     
 }
         else if (type_valide()){
-        String typeRec =tftype.getText();
+       // String typeRec =tftype.getText();
        
         ServiceTypeReclamation se=new ServiceTypeReclamation();
         TypeReclamation e=new TypeReclamation(typeRec);
@@ -87,7 +88,7 @@ public class AjouterTypeRecController implements Initializable {
     alert.showAndWait();
     }
     
-     Parent tableViewParent = FXMLLoader.load(getClass().getResource("AfficherTypeRec.fxml"));
+     Parent tableViewParent = FXMLLoader.load(getClass().getResource("AjouterTypeRec.fxml"));
         Scene tabbleViewScene = new Scene(tableViewParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(tabbleViewScene);

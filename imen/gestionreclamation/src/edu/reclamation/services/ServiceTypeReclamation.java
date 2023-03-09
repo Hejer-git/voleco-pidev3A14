@@ -46,14 +46,6 @@ public class ServiceTypeReclamation implements IServiceType<TypeReclamation> {
 
 @Override
     public void supprimerTypeRec(TypeReclamation t) {
-      /*  try {
-            String req = "DELETE FROM `typereclamation` WHERE idTR = " + t.getIdTR();
-            Statement st = cnx.createStatement();
-            st.executeUpdate(req);
-            System.out.println("typerec deleted !");
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }*/
       try {
             // create a PreparedStatement to delete the event with the specified id
             PreparedStatement ps = cnx.prepareStatement("DELETE FROM typereclamation WHERE idTR = ?");
@@ -96,39 +88,59 @@ public class ServiceTypeReclamation implements IServiceType<TypeReclamation> {
         return list;}
     
         @Override
-    public TypeReclamation getOneById(int idRTR) {
-        TypeReclamation t = null;
+    
+    public TypeReclamation getOneById(int idTR) {
+        TypeReclamation a = null;
         try {
-            String req = "Select * from typereclamation";
-            Statement st = cnx.createStatement();
-            ResultSet rs = st.executeQuery(req);
+            String query = "SELECT * FROM typereclamation WHERE idTR = ?";
+            PreparedStatement statement = cnx.prepareStatement(query);
+            statement.setInt(1, idTR);
+            ResultSet rs = statement.executeQuery();
             while (rs.next()) {
-                t = new TypeReclamation(rs.getInt(1), rs.getString("typeRec"));
+                a = new TypeReclamation(rs.getInt(1),rs.getString("typeRec"));
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
 
-        return t;
+        return a;
     }
-    
-    
-    @Override
-    public int getIdt(String c) {
-      
-        String sql = "select idTR from typereclamation where typeRec=" + "'" + c + "'";
  
+     @Override
+    public TypeReclamation getOneByName(String nom) {
+        TypeReclamation a = null;
         try {
-            Statement st = cnx.createStatement();
-            ResultSet rs = st.executeQuery(sql);
-            rs.next();
-            int id = rs.getInt(1);
-            return id;
-          
+            String query = "SELECT * FROM typereclamation WHERE typeRec = ?";
+            PreparedStatement statement = cnx.prepareStatement(query);
+            statement.setString(1, nom);
+            ResultSet rs = statement.executeQuery();
+
+            while (rs.next()) {
+                a = new TypeReclamation(rs.getInt(1), rs.getString("typeRec"));
+            }
         } catch (SQLException ex) {
-            Logger.getLogger(ServiceTypeReclamation.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
         }
-        return 0;
-     }
-  
+
+        return a;
+    }
+    @Override
+    public TypeReclamation readBytype(String ty) {
+    try {
+            String query = "SELECT * FROM typereclamation WHERE typeRec = ?";
+            PreparedStatement statement = cnx.prepareStatement(query);
+            statement.setString(1, ty);
+            ResultSet rs = statement.executeQuery();
+
+            if (rs.next()) {
+                int idTR= rs.getInt("idTR");
+                String typeRec = rs.getString("typeRec");
+                
+                return new TypeReclamation(idTR,typeRec);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
     }

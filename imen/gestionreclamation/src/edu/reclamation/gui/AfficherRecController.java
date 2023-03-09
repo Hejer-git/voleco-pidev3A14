@@ -5,7 +5,7 @@
  */
 package edu.reclamation.gui;
 
-import api.Pdf;
+import edu.reclamation.gui.chatb;
 import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.DocumentException;
 import edu.reclamation.entities.Reclamation;
@@ -54,8 +54,7 @@ public class AfficherRecController implements Initializable {
     private TextField tfrecherche;
     @FXML
     private Button chercher;
-    @FXML
-    private Button pdf;
+  
     @FXML
     private ComboBox<String> cbdesasc;
     @FXML
@@ -161,15 +160,6 @@ public class AfficherRecController implements Initializable {
      
     }
     
-
- @FXML
-    private void pdf(ActionEvent event) throws DocumentException, BadElementException, IOException, FileNotFoundException, InterruptedException, SQLException {
-        Pdf p = new Pdf();
-        p.GeneratePdf("Mes reclamations");
-        
-     
-    }
-
     @FXML
     private void cbdesasc(ActionEvent event) {
     }
@@ -206,6 +196,12 @@ public class AfficherRecController implements Initializable {
         } catch (NumberFormatException ex) {
            // handle case where nomRes is not a valid String
         }
+    }
+
+    @FXML
+    private void chat(ActionEvent event) {
+        ChatGUI chatGUI = new ChatGUI();
+    chatGUI.setVisible(true);
     }
     
 }

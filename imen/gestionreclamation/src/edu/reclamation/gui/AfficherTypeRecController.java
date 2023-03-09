@@ -42,8 +42,6 @@ public class AfficherTypeRecController implements Initializable {
      private Listener listener;
     @FXML
     private GridPane grid;
-    @FXML
-    private TextField tfrecherche;
     
     /**
      * Initializes the controller class.
@@ -94,10 +92,6 @@ public class AfficherTypeRecController implements Initializable {
         window.show();
     }
 
-    @FXML
-    private void recherche(KeyEvent event) {
-        
-    }
     
     
 }

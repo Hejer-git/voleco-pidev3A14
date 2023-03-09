@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="929.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.reclamation.gui.AfficherRecController">
+<AnchorPane id="AnchorPane" prefHeight="590.0" prefWidth="1051.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.reclamation.gui.AfficherRecController">
     <stylesheets>
         <URL value="@afficherrec.css" />
     </stylesheets>
@@ -152,8 +152,12 @@
                   <Insets left="5.0" />
                </padding>
             </HBox>
-            <Button fx:id="pdf" layoutX="55.0" layoutY="407.0" mnemonicParsing="false" onAction="#pdf" text="pdf" />
-            <Button layoutX="136.0" layoutY="408.0" mnemonicParsing="false" onAction="#retourbutt" text="Retour" />
+            <Button layoutX="31.0" layoutY="455.0" mnemonicParsing="false" onAction="#chat" prefHeight="31.0" prefWidth="42.0" />
+            <ImageView fitHeight="42.0" fitWidth="30.0" layoutX="37.0" layoutY="456.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/téléchargement-removebg-preview.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <ImageView fitHeight="160.0" fitWidth="159.0" layoutY="-20.0" pickOnBounds="true" preserveRatio="true">
@@ -166,27 +170,27 @@
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="700.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="892.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/icons8_bell_24px.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="724.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="916.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/icons8_help_32px.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="751.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="943.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/icons8_settings_26px.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="883.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="993.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/icons8_slider_50px.png" />
          </image>
       </ImageView>
-      <ScrollPane layoutX="257.0" layoutY="127.0" prefHeight="457.0" prefWidth="664.0" styleClass="transparent" stylesheets="@AfficherRec.css">
+      <ScrollPane layoutX="257.0" layoutY="127.0" prefHeight="457.0" prefWidth="779.0" styleClass="transparent" stylesheets="@AfficherRec.css">
          <content>
             <GridPane fx:id="grid" prefHeight="10.0" prefWidth="21.0" stylesheets="@AfficherRec.css">
                <columnConstraints>
@@ -196,9 +200,10 @@
          </content>
       </ScrollPane>
       <Button layoutX="257.0" layoutY="84.0" mnemonicParsing="false" onAction="#typeRec" text="typeRec" />
-      <TextField fx:id="tfrecherche" layoutX="440.0" layoutY="84.0" />
-      <Button fx:id="chercher" layoutX="627.0" layoutY="84.0" mnemonicParsing="false" onAction="#recherche" text="chercher" />
-      <ComboBox fx:id="cbdesasc" layoutX="724.0" layoutY="84.0" onAction="#cbdesasc" prefWidth="150.0" promptText="DES/ASC" />
-      <Button fx:id="btntrier" layoutX="876.0" layoutY="84.0" mnemonicParsing="false" onAction="#btntrier" text="Trier" />
+      <TextField fx:id="tfrecherche" layoutX="513.0" layoutY="84.0" />
+      <Button fx:id="chercher" layoutX="700.0" layoutY="84.0" mnemonicParsing="false" onAction="#recherche" text="chercher" />
+      <ComboBox fx:id="cbdesasc" layoutX="826.0" layoutY="84.0" onAction="#cbdesasc" prefWidth="150.0" promptText="DES/ASC" />
+      <Button fx:id="btntrier" layoutX="977.0" layoutY="84.0" mnemonicParsing="false" onAction="#btntrier" text="Trier" />
+      <Button layoutX="343.0" layoutY="84.0" mnemonicParsing="false" onAction="#retourbutt" text="Retour" />
    </children>
 </AnchorPane>

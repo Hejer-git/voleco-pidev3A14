@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/edu/reclamation/services/ServiceTypeReclamation.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>101</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/imen/Documents/NetBeansProjects/imen/gestionreclamation/src/edu/reclamation/services/ServiceReclamation.java</file>
-            <file>file:/C:/Users/imen/Documents/NetBeansProjects/imen/gestionreclamation/src/edu/reclamation/gui/window1.java</file>
-            <file>file:/C:/Users/imen/Documents/NetBeansProjects/imen/gestionreclamation/src/edu/reclamation/gui/AfficherRecController.java</file>
-            <file>file:/C:/Users/imen/Documents/NetBeansProjects/imen/gestionreclamation/src/api/Pdf.java</file>
-            <file>file:/C:/Users/imen/Documents/NetBeansProjects/imen/gestionreclamation/src/edu/reclamation/gui/AjouterRecController.java</file>
-            <file>file:/C:/Users/imen/Documents/NetBeansProjects/imen/gestionreclamation/src/edu/reclamation/utils/DataSource.java</file>
+            <file>file:/C:/Users/imen/Documents/NetBeansProjects/lastamal/src/edu/reclamation/gui/AjouterRecController.java</file>
+            <file>file:/C:/Users/imen/Documents/NetBeansProjects/lastamal/src/api/MailerAPI.java</file>
+            <file>file:/C:/Users/imen/Documents/NetBeansProjects/lastamal/src/edu/reclamation/gui/window1.java</file>
         </group>
     </open-files>
 </project-private>

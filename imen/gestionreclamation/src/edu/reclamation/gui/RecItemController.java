@@ -6,7 +6,10 @@
 package edu.reclamation.gui;
 
 import edu.reclamation.entities.Reclamation;
+import edu.reclamation.entities.TypeReclamation;
 import edu.reclamation.services.ServiceReclamation;
+import edu.reclamation.services.ServiceTypeReclamation;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
@@ -22,6 +25,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javax.xml.bind.Marshaller.Listener;
@@ -46,6 +51,8 @@ public class RecItemController implements Initializable {
      private Listener listener;
     @FXML
     private Label type;
+    @FXML
+    private ImageView imageview;
     /**
      * Initializes the controller class.
      */
@@ -60,7 +67,13 @@ public void setData(Reclamation rec,Listener listener){
         tfnom.setText(r.getNomC());
         tfdesc.setText(r.getDescription());
         dates.setText(String.valueOf(r.getDateRec()));
-        type.setText(String.valueOf(r.getType()));
+        
+        ServiceTypeReclamation s=new ServiceTypeReclamation();
+        TypeReclamation t=s.getOneById(r.getType());
+        //type.setText(String.valueOf(r.getType()));
+        type.setText(t.getTypeRec());
+       Image image = new Image(getClass().getResourceAsStream("../imen/"+r.getImage()));
+        imageview.setImage(image);
     }
     @FXML
     private void btnclicked(ActionEvent event) throws IOException {
@@ -81,7 +94,7 @@ public void setData(Reclamation rec,Listener listener){
         alert.setContentText("Are u sure?"); 
         Optional<ButtonType> result=alert.showAndWait();
         if(result.get()==ButtonType.OK){ 
-       // ServiceReclamation service = new ServiceReclamation();
+      
         service.supprimerRec(r);
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("AfficherRec.fxml"));
         Scene tabbleViewScene = new Scene(tableViewParent);
@@ -96,15 +109,6 @@ public void setData(Reclamation rec,Listener listener){
         window.setScene(tabbleViewScene);
         window.show();
         }
-    
-      /////////////////shyhaaaa 
-      /* ServiceReclamation service = new ServiceReclamation();
-        service.supprimerRec(r);
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("AfficherRec.fxml"));
-        Scene tabbleViewScene = new Scene(tableViewParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(tabbleViewScene);
-        window.show();*/
     }
     @FXML
     private void editpressed(MouseEvent event) {

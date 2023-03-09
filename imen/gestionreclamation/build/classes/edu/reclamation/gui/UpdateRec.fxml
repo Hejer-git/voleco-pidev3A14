@@ -4,7 +4,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -187,33 +186,30 @@
             <Image url="@../images/icons8_slider_50px.png" />
          </image>
       </ImageView>
-      <Label layoutX="423.0" layoutY="217.0" text="nomc" textFill="#a2bee8">
+      <Label layoutX="423.0" layoutY="217.0" text="Nom" textFill="#a2bee8">
          <font>
-            <Font size="18.0" />
+            <Font name="Cambria" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="405.0" layoutY="281.0" text="description" textFill="#a2bee8">
+      <Label layoutX="405.0" layoutY="281.0" text="Description" textFill="#a2bee8">
          <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="427.0" layoutY="351.0" text="date" textFill="#a2bee8">
-         <font>
-            <Font size="18.0" />
+            <Font name="Cambria" size="19.0" />
          </font>
       </Label>
       <Button fx:id="bAnnuler" layoutX="699.0" layoutY="502.0" mnemonicParsing="false" onAction="#annuler" text="annuler" textFill="#2262c6" />
-      <Button fx:id="bValider" layoutX="462.0" layoutY="502.0" mnemonicParsing="false" onAction="#modifier" text="modifier" textFill="#2262c6" />
+      <Button fx:id="bValider" layoutX="462.0" layoutY="502.0" mnemonicParsing="false" onAction="#modifier" text="Modifier" textFill="#2262c6" />
       <TextField fx:id="tfnom" layoutX="507.0" layoutY="212.0" />
       <TextField fx:id="tfdesc" layoutX="507.0" layoutY="262.0" prefHeight="58.0" prefWidth="187.0" />
-      <DatePicker fx:id="dates" layoutX="507.0" layoutY="346.0" prefHeight="31.0" prefWidth="187.0" />
       <Label layoutX="466.0" layoutY="122.0" text="Modifier reclamation" textFill="#2262c6">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Label>
-      <Button layoutX="577.0" layoutY="502.0" mnemonicParsing="false" onAction="#affrec" text="afficher" textFill="#2262c6" />
-      <ComboBox fx:id="typecombo" layoutX="512.0" layoutY="394.0" prefHeight="31.0" prefWidth="187.0" />
-      <Label layoutX="432.0" layoutY="399.0" text="type" />
+      <Button layoutX="577.0" layoutY="502.0" mnemonicParsing="false" onAction="#affrec" text="Afficher" textFill="#2262c6" />
+      <ComboBox fx:id="typecombo" layoutX="507.0" layoutY="349.0" prefHeight="31.0" prefWidth="187.0" />
+      <Label layoutX="431.0" layoutY="354.0" text="Type" textFill="#a2bee8">
+         <font>
+            <Font name="Cambria" size="19.0" />
+         </font></Label>
    </children>
 </AnchorPane>

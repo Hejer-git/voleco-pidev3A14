@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.stream.Collectors;
@@ -33,8 +34,7 @@ public class ServiceReclamation implements IService<Reclamation> {
       // SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         //Date dd=r.getDateRec();
         try {
-           String req = "INSERT INTO `reclamation` (`nomC`, `description`,`dateRec`,`type`) VALUES ('" + r.getNomC() + "', '" + r.getDescription() + "', '"+(r.getDateRec())+"', '"+(r.getType())+"')";
-          //String req = "INSERT INTO `reclamation` (`nomC`, `description`,`dateRec`)"+" VALUES (?,?,?)";
+           String req = "INSERT INTO `reclamation` (`nomC`, `description`,`dateRec`,`type`,`image`) VALUES ('" + r.getNomC() + "', '" + r.getDescription() + "', '"+(r.getDateRec())+"', '"+(r.getType())+"', '"+(r.getImage())+"')";
              Statement st = cnx.createStatement();
             st.executeUpdate(req);
             System.out.println("reclamation created !");
@@ -64,8 +64,7 @@ public class ServiceReclamation implements IService<Reclamation> {
   @Override
     public void modifierRec(Reclamation r) {
         try {
-            //String req = "UPDATE `reclamation` SET `nomC` = '" + r.getNomC() + "', `description` = '" + r.getDescription() + "', `dateRec` = '" + r.getDateRec() + ", `type` = '" + r.getType() + "' WHERE `reclamation`.`idRec` = " + r.getIdRec();
-              String req = "UPDATE `reclamation` SET `nomC` = '" + r.getNomC() + "', `description` = '" + r.getDescription() + "', `dateRec` = '" + r.getDateRec()+ "' WHERE `reclamation`.`idRec` = " + r.getIdRec();
+              String req = "UPDATE `reclamation` SET `nomC` = '" + r.getNomC() + "', `description` = '" + r.getDescription() + "', `dateRec` = '" + r.getDateRec()+"', `type` = '" + r.getType()+ "',`image`='"+r.getImage()+"' WHERE `reclamation`.`idRec` = " + r.getIdRec();
 
             Statement st = cnx.createStatement();
             st.executeUpdate(req);
@@ -82,7 +81,7 @@ public class ServiceReclamation implements IService<Reclamation> {
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
-                Reclamation r = new Reclamation(rs.getInt(1), rs.getString("nomC"), rs.getString("description"),rs.getDate("dateRec"),rs.getInt("type"));
+                Reclamation r = new Reclamation(rs.getInt(1), rs.getString("nomC"), rs.getString("description"),rs.getDate("dateRec"),rs.getInt("type"),rs.getString("image"));
                 list.add(r);
             }
         } catch (SQLException ex) {
@@ -99,7 +98,7 @@ public class ServiceReclamation implements IService<Reclamation> {
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
-                r = new Reclamation(rs.getInt(1), rs.getString("nomC"), rs.getString("description"),rs.getDate("dateRec"),rs.getInt("type"));
+                r = new Reclamation(rs.getInt(1), rs.getString("nomC"), rs.getString("description"),rs.getDate("dateRec"),rs.getInt("type"),rs.getString("image"));
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -114,7 +113,7 @@ public class ServiceReclamation implements IService<Reclamation> {
             PreparedStatement statement = cnx.prepareStatement(req);
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
-                Reclamation s = new Reclamation(rs.getInt(1), rs.getString("nomC"),rs.getString("description"),rs.getDate("dateRec"),rs.getInt("type"));
+                Reclamation s = new Reclamation(rs.getInt(1), rs.getString("nomC"),rs.getString("description"),rs.getDate("dateRec"),rs.getInt("type"),rs.getString("image"));
                 list.add(s);
             }
         } catch (SQLException ex) {
@@ -139,4 +138,30 @@ public class ServiceReclamation implements IService<Reclamation> {
                
         return list;
     } 
+    
+      /*  public String bad_words(String badWord) {
+
+        List<String> badListW = Arrays.asList("fuck","fuck u","shit");
+        String badNew = "";
+        List<String> newList = new ArrayList<>();
+        for (String str : badListW) {
+            if (badWord.contains(str)) {
+                badNew += "" + str;
+                if (str.length() >= 1) {
+                    StringBuilder result = new StringBuilder();
+                    result.append(str.charAt(0));
+                    for (int i = 0; i < str.length() - 2; ++i) {
+                        result.append("*");
+                    }
+                    result.append(str.charAt(str.length() - 1));
+                    str = result.toString();
+                    if (!str.isEmpty()) {
+                        System.out.println("ATTENTION !! Vous avez écrit un gros mot  : " + result + " .C'est un avertissement ! Priére d'avoir un peu de respect ! Votre description sera envoyée comme suit :");
+                        System.out.println(badWord.replace(badNew, "") + " ");
+                    }
+                }
+            }
+        }
+        return (badWord.replace(badNew, "") + " ");
+    }*/
     }

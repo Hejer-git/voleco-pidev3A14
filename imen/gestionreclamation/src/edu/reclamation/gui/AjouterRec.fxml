@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="590.0" prefWidth="915.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.reclamation.gui.AjouterRecController">
@@ -19,144 +15,6 @@
         <URL value="@ajouterrec.css" />
     </stylesheets>
    <children>
-      <AnchorPane layoutY="84.0" prefHeight="506.0" prefWidth="240.0" styleClass="sidebar">
-         <children>
-            <Pane layoutX="30.0" layoutY="37.0" prefHeight="30.0" prefWidth="180.0" styleClass="labbtn">
-               <children>
-                  <Label alignment="CENTER" layoutX="41.0" layoutY="6.0" text="Se deconnecter" textFill="#2262c6">
-                     <font>
-                        <Font name="Berlin Sans FB" size="14.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <HBox alignment="CENTER_LEFT" layoutX="1.0" layoutY="122.0" prefHeight="42.0" prefWidth="240.0" styleClass="sidebar-btn-text">
-               <children>
-                  <ImageView fitHeight="33.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/user.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets right="10.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label prefHeight="29.0" prefWidth="146.0" text="Gestion Utilisateur" textFill="#a2bee8">
-                     <font>
-                        <Font name="Cambria" size="16.0" />
-                     </font>
-                  </Label>
-               </children>
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-            </HBox>
-            <Label alignment="CENTER" layoutX="30.0" layoutY="404.0" text="Strorage Details" textFill="#a2bee8">
-               <font>
-                  <Font name="Berlin Sans FB" size="16.0" />
-               </font>
-            </Label>
-            <HBox alignment="CENTER_LEFT" layoutY="164.0" prefHeight="42.0" prefWidth="240.0" styleClass="sidebar-btn-text">
-               <children>
-                  <ImageView fitHeight="33.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/vol.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets right="10.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label prefHeight="29.0" prefWidth="146.0" text="Gestion Vols" textFill="#a2bee8">
-                     <font>
-                        <Font name="Cambria" size="16.0" />
-                     </font>
-                  </Label>
-               </children>
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" layoutY="206.0" prefHeight="42.0" prefWidth="240.0" styleClass="sidebar-btn-text">
-               <children>
-                  <ImageView fitHeight="33.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/bagage.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets right="10.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label prefHeight="29.0" prefWidth="146.0" text="Gestion Bagage" textFill="#a2bee8">
-                     <font>
-                        <Font name="Cambria" size="16.0" />
-                     </font>
-                  </Label>
-               </children>
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" layoutY="253.0" prefHeight="42.0" prefWidth="240.0" styleClass="sidebar-btn-text">
-               <children>
-                  <ImageView fitHeight="33.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/reservation.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets right="10.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label prefHeight="29.0" prefWidth="146.0" text="Gestion Reservation" textFill="#a2bee8">
-                     <font>
-                        <Font name="Cambria" size="16.0" />
-                     </font>
-                  </Label>
-               </children>
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" layoutY="295.0" prefHeight="42.0" prefWidth="240.0" styleClass="sidebar-btn-text">
-               <children>
-                  <ImageView fitHeight="33.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/reclamation.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets right="10.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label prefHeight="29.0" prefWidth="146.0" text="Gestion Reclamation" textFill="#a2bee8">
-                     <font>
-                        <Font name="Cambria" size="16.0" />
-                     </font>
-                  </Label>
-               </children>
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" layoutY="337.0" prefHeight="42.0" prefWidth="240.0" styleClass="sidebar-btn-text">
-               <children>
-                  <ImageView fitHeight="33.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/offres.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets right="10.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label prefHeight="29.0" prefWidth="146.0" text="Gestion Offres" textFill="#a2bee8">
-                     <font>
-                        <Font name="Cambria" size="16.0" />
-                     </font>
-                  </Label>
-               </children>
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-            </HBox>
-         </children>
-      </AnchorPane>
       <ImageView fitHeight="160.0" fitWidth="159.0" layoutY="-20.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/logo.png" />
@@ -167,53 +25,51 @@
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="700.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/icons8_bell_24px.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="724.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/icons8_help_32px.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="751.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/icons8_settings_26px.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="883.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/icons8_slider_50px.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="413.0" layoutY="207.0" text="nomc" textFill="#a2bee8">
+      <Label layoutX="273.0" layoutY="204.0" text="Nom" textFill="#a2bee8">
          <font>
-            <Font size="18.0" />
+            <Font name="Cambria" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="395.0" layoutY="271.0" text="description" textFill="#a2bee8">
+      <Label layoutX="247.0" layoutY="282.0" text="Description" textFill="#a2bee8">
          <font>
-            <Font size="18.0" />
+            <Font name="Cambria" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="417.0" layoutY="341.0" text="date" textFill="#a2bee8">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Button fx:id="bAnnuler" layoutX="689.0" layoutY="492.0" mnemonicParsing="false" onAction="#annuler" text="annuler" textFill="#2262c6" />
-      <Button fx:id="bValider" layoutX="452.0" layoutY="492.0" mnemonicParsing="false" onAction="#ajoutrec" text="valider" textFill="#2262c6" />
-      <TextField fx:id="tfnom" layoutX="497.0" layoutY="202.0" />
-      <TextField fx:id="tfdesc" layoutX="497.0" layoutY="252.0" prefHeight="58.0" prefWidth="187.0" />
-      <DatePicker fx:id="dates" layoutX="497.0" layoutY="336.0" prefHeight="31.0" prefWidth="187.0" />
-      <Label layoutX="456.0" layoutY="112.0" text="Ajouter reclamation" textFill="#2262c6">
+      <Button fx:id="bAnnuler" layoutX="516.0" layoutY="533.0" mnemonicParsing="false" onAction="#annuler" text="annuler" textFill="#2262c6" />
+      <Button fx:id="bValider" layoutX="293.0" layoutY="533.0" mnemonicParsing="false" onAction="#ajoutrec" text="valider" textFill="#2262c6" />
+      <TextField fx:id="tfnom" layoutX="364.0" layoutY="202.0" />
+      <TextField fx:id="tfdesc" layoutX="364.0" layoutY="266.0" prefHeight="58.0" prefWidth="187.0" />
+      <Label layoutX="310.0" layoutY="120.0" text="Ajouter reclamation" textFill="#2262c6">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Label>
-      <Button layoutX="567.0" layoutY="492.0" mnemonicParsing="false" onAction="#affrec" text="afficher" textFill="#2262c6" />
-      <ComboBox fx:id="typecombo" layoutX="502.0" layoutY="384.0" prefHeight="31.0" prefWidth="187.0" />
-      <Label layoutX="422.0" layoutY="389.0" text="type" />
+      <Button layoutX="399.0" layoutY="533.0" mnemonicParsing="false" onAction="#affrec" text="afficher" textFill="#2262c6" />
+      <ComboBox fx:id="typecombo" layoutX="364.0" layoutY="366.0" prefHeight="31.0" prefWidth="187.0" />
+      <Label layoutX="280.0" layoutY="369.0" text="Type" textFill="#a2bee8">
+         <font>
+            <Font name="Cambria" size="19.0" />
+         </font></Label>
+      <Button layoutX="375.0" layoutY="422.0" mnemonicParsing="false" onAction="#uploadimage" prefHeight="42.0" prefWidth="159.0" text="Upload image" textFill="#2262c6" />
+      <Button layoutX="425.0" layoutY="36.0" mnemonicParsing="false" onAction="#btngerer" style="-fx-background-color: #6495ED;" text="Gerer ma reservation" textAlignment="CENTER">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="364.0" layoutY="36.0" mnemonicParsing="false" onAction="#btngerer" style="-fx-background-color: #6495ED;" text="Vols" textAlignment="CENTER">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="586.0" layoutY="35.0" mnemonicParsing="false" onAction="#btngerer" style="-fx-background-color: #6495ED;" text="Mon compte" textAlignment="CENTER">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="702.0" layoutY="36.0" mnemonicParsing="false" onAction="#btngerer" style="-fx-background-color: #6495ED;" text="Info-Aide" textAlignment="CENTER">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
