@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="86.0" prefWidth="697.0" stylesheets="@gestionuser.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.UserItemController">
+   <children>
+      <HBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="16.0" prefHeight="55.0" prefWidth="669.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10px;" styleClass="card-user" stylesheets="@gestionuser.css">
+         <children>
+            <ImageView fitHeight="47.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="nomlabel" alignment="CENTER" prefHeight="45.0" prefWidth="61.0" text="Nom" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="prenomlabel" alignment="CENTER" prefHeight="45.0" prefWidth="64.0" text="Prenom" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="cinlabel" alignment="CENTER" prefHeight="45.0" prefWidth="58.0" text="Cin" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="numlabel" alignment="CENTER" prefHeight="45.0" prefWidth="63.0" text="Numtel" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="emaillabel" alignment="CENTER" prefHeight="45.0" prefWidth="94.0" text="Email" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="salairelabel" alignment="CENTER" prefHeight="45.0" prefWidth="64.0" text="Salaire" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="rolelabel" alignment="CENTER" prefHeight="45.0" prefWidth="82.0" text="Role" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="23.0" fitWidth="22.0" onMouseClicked="#btnedit" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/note-paper-square-and-a-pencil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="23.0" onMouseClicked="#btndel" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/close-cross-sign-in-a-square-button.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </ImageView>
+         </children></HBox>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</AnchorPane>

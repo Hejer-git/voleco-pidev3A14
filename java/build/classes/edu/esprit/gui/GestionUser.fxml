@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="919.0" styleClass="home-back" stylesheets="@gestionuser.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.GestionUserController">
+    <children>
+      <ImageView fitHeight="160.0" fitWidth="159.0" layoutX="-10.0" layoutY="-30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logo.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="112.0" layoutY="22.0" text="VOLECO" textFill="#2262c6">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="690.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons8_bell_24px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="714.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons8_help_32px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="741.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons8_settings_26px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="873.0" layoutY="29.0" onMouseClicked="#editactiveuserbtn" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons8_slider_50px.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="-1.0" layoutY="74.0" prefHeight="506.0" prefWidth="240.0" styleClass="sidebar">
+         <children>
+            <Pane layoutX="31.0" layoutY="401.0" prefHeight="30.0" prefWidth="180.0" styleClass="labbtn">
+               <children>
+                  <Label alignment="CENTER" layoutX="41.0" layoutY="6.0" onMouseClicked="#logout" text="Se deconnecter" textFill="#2262c6">
+                     <font>
+                        <Font name="Berlin Sans FB" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <HBox alignment="CENTER_LEFT" layoutX="1.0" layoutY="122.0" prefHeight="42.0" prefWidth="240.0" styleClass="sidebar-btn-text">
+               <children>
+                  <ImageView fitHeight="33.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/user.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="29.0" prefWidth="146.0" text="Gestion Utilisateur" textFill="WHITE">
+                     <font>
+                        <Font name="Cambria" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutY="164.0" prefHeight="42.0" prefWidth="240.0" styleClass="sidebar-btn-text">
+               <children>
+                  <ImageView fitHeight="33.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/vol.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="29.0" prefWidth="146.0" text="Gestion Vols" textFill="WHITE">
+                     <font>
+                        <Font name="Cambria" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutY="206.0" prefHeight="42.0" prefWidth="240.0" styleClass="sidebar-btn-text">
+               <children>
+                  <ImageView fitHeight="33.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/bagage.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="29.0" prefWidth="146.0" text="Gestion Bagage" textFill="WHITE">
+                     <font>
+                        <Font name="Cambria" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutY="253.0" prefHeight="42.0" prefWidth="240.0" styleClass="sidebar-btn-text">
+               <children>
+                  <ImageView fitHeight="33.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/reservation.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="29.0" prefWidth="146.0" text="Gestion Reservation" textFill="WHITE">
+                     <font>
+                        <Font name="Cambria" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutY="295.0" prefHeight="42.0" prefWidth="240.0" styleClass="sidebar-btn-text">
+               <children>
+                  <ImageView fitHeight="33.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/reclamation.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="29.0" prefWidth="146.0" text="Gestion Reclamation" textFill="WHITE">
+                     <font>
+                        <Font name="Cambria" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutY="337.0" prefHeight="42.0" prefWidth="240.0" styleClass="sidebar-btn-text">
+               <children>
+                  <ImageView fitHeight="33.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/offres.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="29.0" prefWidth="146.0" text="Gestion Offres" textFill="WHITE">
+                     <font>
+                        <Font name="Cambria" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </HBox>
+            <Circle fill="WHITE" layoutX="120.0" layoutY="44.0" radius="42.0" stroke="WHITE" strokeType="INSIDE" />
+            <ImageView fx:id="activeuserimg" fitHeight="60.0" fitWidth="59.0" layoutX="91.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="welcomelabel" alignment="CENTER" layoutX="22.0" layoutY="85.0" text="Bienvenue " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Pane layoutX="249.0" layoutY="74.0" prefHeight="506.0" prefWidth="677.0" style="-fx-background-color: #F8F9FB;" />
+      <Pane fx:id="homeusepane" layoutX="246.0" layoutY="74.0" prefHeight="506.0" prefWidth="677.0" style="-fx-background-color: #F8F9FB;">
+         <children>
+            <Pane layoutX="24.0" layoutY="13.0" prefHeight="99.0" prefWidth="186.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 5); -fx-background-color: #fff; -fx-background-radius: 5;">
+               <children>
+                  <Text layoutX="14.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Clients Total" wrappingWidth="173.95899099111557">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="totalclients" layoutX="14.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="25">
+                     <font>
+                        <Font name="System Bold" size="35.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="230.0" layoutY="13.0" prefHeight="99.0" prefWidth="186.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 5); -fx-background-color: #fff; -fx-background-radius: 5;">
+               <children>
+                  <Text layoutX="14.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Employees Total" wrappingWidth="173.95899099111557">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="totalemployees" layoutX="14.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="25">
+                     <font>
+                        <Font name="System Bold" size="35.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="437.0" layoutY="13.0" prefHeight="99.0" prefWidth="186.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 5); -fx-background-color: #fff; -fx-background-radius: 5;">
+               <children>
+                  <Text layoutX="14.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Clients Inscrits" wrappingWidth="173.95899099111557">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="newclients" layoutX="14.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="25">
+                     <font>
+                        <Font name="System Bold" size="35.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <ImageView fitHeight="90.0" fitWidth="92.0" layoutX="146.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/client.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2f9bfa24" height="159.0" layoutX="335.0" layoutY="195.0" onMouseClicked="#employeebox" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 5); -fx-background-radius: 5;" width="203.0" />
+            <ImageView fitHeight="90.0" fitWidth="92.0" layoutX="392.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/employee.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="104.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion des clients">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <Text layoutX="330.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion des employees">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2f9bfa24" height="159.0" layoutX="90.0" layoutY="195.0" onMouseClicked="#clientbox" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 5); -fx-background-radius: 25;" width="203.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="clientpane" layoutX="242.0" layoutY="72.0" prefHeight="506.0" prefWidth="686.0" style="-fx-background-color: #F8F9FB; -fx-background-radius: 25;">
+         <children>
+            <ScrollPane layoutY="67.0" prefHeight="442.0" prefWidth="677.0" styleClass="transparent" stylesheets="@gestionuser.css">
+               <content>
+                  <GridPane fx:id="grid1" prefHeight="10.0" prefWidth="21.0" stylesheets="@gestionuser.css">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+            <Button layoutX="28.0" layoutY="4.0" mnemonicParsing="false" onAction="#backhomeuser" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #459aec; -fx-background-radius: 25;" text="Retour" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Text layoutX="64.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" wrappingWidth="34.330654323101044">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="147.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom" wrappingWidth="59.000010669231415">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="223.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CIN" wrappingWidth="40.28076187521219">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="288.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEL" wrappingWidth="40.28076187521219">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="398.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="40.28076187521219">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane fx:id="employeepane" layoutX="241.0" layoutY="71.0" prefHeight="506.0" prefWidth="686.0" style="-fx-background-color: #F8F9FB; -fx-background-radius: 25;">
+         <children>
+            <ScrollPane layoutY="67.0" prefHeight="442.0" prefWidth="686.0" styleClass="transparent" stylesheets="@gestionuser.css">
+               <content>
+                  <GridPane fx:id="grid" prefHeight="10.0" prefWidth="21.0" stylesheets="@gestionuser.css">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+            <Button layoutX="507.0" layoutY="4.0" mnemonicParsing="false" onAction="#btnaddhome" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #459aec; -fx-background-radius: 25;" text=" Ajouter" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="28.0" layoutY="4.0" mnemonicParsing="false" onAction="#backhomeuser" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #459aec; -fx-background-radius: 25;" text="Retour" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Text layoutX="64.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" wrappingWidth="34.330654323101044">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="147.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom" wrappingWidth="59.000010669231415">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="223.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CIN" wrappingWidth="40.28076187521219">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="288.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEL" wrappingWidth="40.28076187521219">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="398.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="40.28076187521219">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="531.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salaire" wrappingWidth="59.000010669231415">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
+    
+</AnchorPane>

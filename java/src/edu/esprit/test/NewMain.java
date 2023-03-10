@@ -6,6 +6,11 @@
 package edu.esprit.test;
 
 import edu.esprit.entities.User;
+import edu.esprit.entities.Admin;
+import edu.esprit.entities.Client;
+import edu.esprit.entities.Employee;
+import edu.esprit.entities.TokenVerification;
+
 import edu.esprit.services.ServiceUser;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,17 +24,11 @@ public class NewMain {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        List<User> users = new ArrayList<>();
-        //User u = new User(11111111, "mhiri", "ismail", "esprit.tn", 96388611, 30000);
-        User u = new User();
+        //TokenVerification token = new TokenVerification();
+        //
 
-        //u.setId(3);
-        ServiceUser service = new ServiceUser();
-        //service.update(u);
-        u = service.readById(1);
-        System.out.println(u);
     }
     
 }

@@ -5,6 +5,7 @@
  */
 package edu.esprit.services;
 
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -16,6 +17,7 @@ public interface IUser<User> {
     public void insert(User u);
     public void delete(User u);
     public void update(User u);
-    public List<User> readAll();
+    public List<User> readAll() ;
     public User readById(int id);
+    public User readByEmailPass(String email,String pass);
 }

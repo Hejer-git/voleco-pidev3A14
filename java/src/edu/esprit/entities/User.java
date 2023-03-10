@@ -5,6 +5,8 @@
  */
 package edu.esprit.entities;
 
+import java.util.Objects;
+
 /**
  *
  * @author ahmed
@@ -18,10 +20,24 @@ public class User {
     private String email;
     private  int numtel;
     private  int salaire;
+    private String password;
+    private int resetcode;
+    private String img;
 
     public User() {
     }
-
+    public User(int id, int cin, String nom, String prenom, String email, int numtel, int salaire, String password, int resetcode, String img) {
+        this.id = id;
+        this.cin = cin;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.numtel = numtel;
+        this.salaire = salaire;
+        this.password = password;
+        this.resetcode = resetcode;
+        this.img = img;
+    }
     public User(int id, int cin, String nom, String prenom, String email, int numtel, int salaire) {
         this.id = id;
         this.cin = cin;
@@ -38,7 +54,7 @@ public class User {
         this.prenom = prenom;
         this.email = email;
         this.numtel = numtel;
-        this.salaire = salaire;  
+        this.salaire = salaire; 
     }
     public int getId() {
         return id;
@@ -96,16 +112,44 @@ public class User {
         this.salaire = salaire;
     }
     
-    
-   @Override
-    public String toString() {
-        return "User{" +
-                ", nom='" + nom + '\'' +
-                ", prenom='" + prenom + '\'' +
-                ", cin='" + cin + '\'' +
-                ", email='" + email + '\'' +
-                ", numtel='" + numtel + '\'' +
-                ", salaire='" + salaire + '\'' +
-                '}';
+    public String getPassword() {
+        return password;
     }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public int getResetcode() {
+        return resetcode;
+    }
+
+    public void setResetcode(int resetcode) {
+        this.resetcode = resetcode;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" + "id=" + id + ", cin=" + cin + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", numtel=" + numtel + ", salaire=" + salaire + ", password=" + password + ", resetcode=" + resetcode + ", img=" + img + '}';
+    }
+    
+   
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 17 * hash + this.id;
+        return hash;
+    }
+
+    
+    
 }
